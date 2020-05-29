@@ -348,7 +348,6 @@ var parkings = {
   ]
 };
 
-L.geoJSON(parkings).addTo(map);
 		
 		var map = L.map('map', opts.map);
 
@@ -407,6 +406,9 @@ L.geoJSON(parkings).addTo(map);
 		routes.addTo(map);
 
 		map.addLayer(baseLayers["OpenTopoMap"]);
+		
+		L.geoJSON(parkings).addTo(map);
+
 
 		map.attributionControl.addAttribution('Map Data: &copy; <a href="https://github.com/adoroszlai">Attila Doroszlai</a> (<a href="https://github.com/adoroszlai/joebed/blob/gh-pages/LICENSE.md">MIT License</a>)');
 	</script>
