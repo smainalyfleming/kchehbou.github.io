@@ -3,7 +3,7 @@
   "crs" : {
     "type" : "name",
     "properties" : {
-      "name" : "EPSG:26918"
+      "NAME" : "EPSG:26918"
     }
   },
   "features" : [
@@ -86,6 +86,7 @@
       "properties" : {
         "OBJECTID" : 2,
         "SHAPE_Length" : 2308.8915929850341,
+        "NAME" : "EPSG:26918",
         "SHAPE_Area" : 120146.72783824621
       }
     },
@@ -121,6 +122,7 @@
       },
       "properties" : {
         "OBJECTID" : 3,
+        "NAME" : "EPSG:26918",
         "SHAPE_Length" : 869.92961375297727,
         "SHAPE_Area" : 34940.612890491211
       }
@@ -241,6 +243,7 @@
       },
       "properties" : {
         "OBJECTID" : 5,
+        "NAME" : "EPSG:26918",
         "SHAPE_Length" : 5537.6732225479282,
         "SHAPE_Area" : 938710.45813805761
       }
