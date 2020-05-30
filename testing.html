@@ -239,8 +239,9 @@
 		var controlMiniMap = new L.Control.MiniMap(new L.TileLayer(opts.osmLayer.url, opts.osmLayer.options), opts.miniMapControl.options);
 		var controlPegman = new L.Control.Pegman(opts.pegmanControl.options);
 		var controlLocate = L.control.locate(opts.locateControl.options);
+    
 
-		var routes = L.gpxGroup(tracks, {
+		var routes = L.gpxGrroup(tracks, {
 			points: parkings,
 			points_options: opts.parkings.options,
 			elevation: true,
