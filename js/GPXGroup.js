@@ -317,3 +317,6 @@ L.GpxGroup = L.Class.extend({
 });
 L.GpxGroup.include(L.Mixin.Events);
 L.GpxGroup.include(L.Mixin.Selection);
+L.gpxGroup = function(tracks, options) {
+ return new L.GpxGroup(tracks, options)
+};
