@@ -19,9 +19,15 @@
 	</style>
 
 	<!-- D3.js -->
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.2/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.3.2/dist/leaflet.js"></script>
+<script src="leaflet.label.js"></script>
+ 
 	<script src="https://unpkg.com/d3@4.13.0/build/d3.min.js" charset="utf-8"></script>
 
 	<!-- Leaflet (JS/CSS) -->
+ 
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.2/dist/leaflet.css" />
 	<script src="https://unpkg.com/leaflet@1.3.2/dist/leaflet.js"></script>
 
@@ -194,6 +200,12 @@
 					},
 				},
 			},
+      polygons: {
+        options:{
+        color:'red',
+        weight:0.1,        
+      },
+      },
 			elevation: {
 				options: {
 					theme: 'yellow-theme',
@@ -213,18 +225,20 @@
 		];
 
 		var parkings = [
-			{latlng:[46.08993,-77.475383], name:"Parking"},
-			{latlng:[46.086276,-77.462525], name:"Parking"},
-			{latlng:[46.086621,-77.470225], name:"Parking"},
-			{latlng:[46.10627,-77.488703], name:"Parking"},
-			{latlng:[46.106286,-77.491299], name:"Parking"},
-			{latlng:[46.10296,-77.485561], name:"Parking"},
-			{latlng:[46.102384,-77.478764], name:"Parking"},
-			{latlng:[46.015874,-77.448013], name:"Parking"},
-			{latlng:[46.100682,-77.480769], name:"Parking"},
+			{latlng:[46.08993,-77.475383]},
+			{latlng:[46.086276,-77.462525]},
+			{latlng:[46.086621,-77.470225]},
+			{latlng:[46.10627,-77.488703]},
+			{latlng:[46.106286,-77.491299]},
+			{latlng:[46.10296,-77.485561]},
+			{latlng:[46.102384,-77.478764]},
+			{latlng:[46.015874,-77.448013]},
+			{latlng:[46.100682,-77.480769]},
 		];
-
-
+var polygons=	L.polygon([
+[46.0792092,-77.4775613],[46.0813527,-77.4804712], [46.0807644,-77.4814732],[46.0785496,-77.4786459],
+[46.0792092,-77.4775613]]).bindTooltip('Mu',{permanent:true,direction:'auto',color: 'red'});
+    
 		var map = L.map('map', opts.map);
 
 		var baseLayers = {};
@@ -232,6 +246,7 @@
 		baseLayers["ESRI World Imagery"] = L.tileLayer(opts.satelliteLayer.url, opts.satelliteLayer.options);
 		baseLayers["OpenTopoMap"] = new L.TileLayer(opts.otmLayer.url, opts.otmLayer.options);
 		baseLayers["OpenStreetMap"] = new L.TileLayer(opts.osmLayer.url, opts.osmLayer.options);
+    
 
 		var controlZoom = new L.Control.Zoom(opts.zoomControl);
 		var controlLayer = L.control.layers(baseLayers, null, opts.layersControl.options);
@@ -243,7 +258,9 @@
 
 		var routes = L.gpxGrroup(tracks, {
 			points: parkings,
+      polygons: polygons,
 			points_options: opts.parkings.options,
+      polygons_options: opts.polygons.options,
 			elevation: true,
 			elevation_options: {
 				theme: "yellow-theme",
@@ -255,6 +272,7 @@
 			legend: true,
 			distanceMarkers: false,
 		});
+ 
 
 		map.on('eledata_added eledata_clear', function(e) {
 			var p = document.querySelector(".chart-placeholder");
@@ -283,8 +301,14 @@
 		routes.addTo(map);
 
 		map.addLayer(baseLayers["OpenTopoMap"]);
-
-		map.attributionControl.addAttribution('Map Data: &copy; <a href="https://github.com/adoroszlai">Attila Doroszlai</a> (<a href="https://github.com/adoroszlai/joebed/blob/gh-pages/LICENSE.md">MIT License</a>)');
+    
+    polygons.addTo(map);
+       polygons.bindTooltip("My polygon",
+   {permanent: true, direction:"center"}
+  ).openTooltip();
+			
+  
+map.attributionControl.addAttribution('Map Data: &copy; <a href="https://github.com/adoroszlai">Attila Doroszlai</a> (<a href="https://github.com/adoroszlai/joebed/blob/gh-pages/LICENSE.md">MIT License</a>)');
 	</script>
 
 </body>
