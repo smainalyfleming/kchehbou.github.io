@@ -1,0 +1,39 @@
+{
+  "type" : "FeatureCollection",
+  "crs" : {
+    "type" : "name",
+    "properties" : {
+      "name" : "EPSG:26918"
+    }
+  },
+  "features" : [
+    {
+      "type" : "Feature",
+      "id" : 1,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          308953.89230000041,
+          5106687.5086000003
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 1
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 2,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          309791.36180000007,
+          5105445.7058000006
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 2
+      }
+    }
+  ]
+}

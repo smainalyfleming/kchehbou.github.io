@@ -1,0 +1,137 @@
+{
+  "type" : "FeatureCollection",
+  "crs" : {
+    "type" : "name",
+    "properties" : {
+      "name" : "EPSG:26918"
+    }
+  },
+  "features" : [
+    {
+      "type" : "Feature",
+      "id" : 1,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          308638.34009999968,
+          5107018.3594000004
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 1
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 3,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          309619.68450000044,
+          5106581.5920000002
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 3
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 4,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          309025.63499999978,
+          5106638.3619999997
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 4
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 5,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          307665.48599999957,
+          5108865.9581000004
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 5
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 6,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          307464.8936999999,
+          5108874.0464999992
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 6
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 7,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          307896.81429999974,
+          5108490.6564000007
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 7
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 8,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          308420.08530000038,
+          5108410.2752
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 8
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 9,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          310500.90160000045,
+          5098724.9045000002
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 9
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 10,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          308259.28189999983,
+          5108226.0109999999
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 10
+      }
+    }
+  ]
+}
