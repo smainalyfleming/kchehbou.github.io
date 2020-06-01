@@ -4,7 +4,7 @@
 		<time>2020-05-31T12:44:22-04:00</time>
 		<bounds minlat="46.086350547548655" minlon="-77.474371688271972" maxlat="46.086644842170514" maxlon="-77.474273722091596"/>
 	</metadata>
-	<rte><name>Rays Junction Loop</name><number>10</number>
+	<rte><name>Rays Junction</name><number>6</number>
 		<rtept lat="46.086644842170514" lon="-77.4743273568738">
 			<ele>151.5454000000027</ele>
 		</rtept>
