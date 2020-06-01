@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -25,40 +24,39 @@
 <script src="leaflet.label.js"></script>
  
 	<script src="https://unpkg.com/d3@4.13.0/build/d3.min.js" charset="utf-8"></script>
-
-	<!-- Leaflet (JS/CSS) -->
  
+	<!-- Leaflet (JS/CSS) -->
+ 	<!-- leaflet-ui -->
+  
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.2/dist/leaflet.css" />
-	<script src="https://unpkg.com/leaflet@1.3.2/dist/leaflet.js"></script>
+  
+ <script src="https://unpkg.com/leaflet@1.3.2/dist/leaflet.js"></script>
 
 	<!-- leaflet-geometryutil -->
 	<script src="https://unpkg.com/leaflet-geometryutil@0.9.1/src/leaflet.geometryutil.js"></script>
 
 	<!-- leaflet-distance-marker -->
 	<link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation@0.3.9/libs/leaflet-distance-marker.min.css" />
-	<script src="https://unpkg.com/@raruto/leaflet-elevation@0.3.9/libs/leaflet-distance-marker.min.js"></script>
+	<script src="https://unpkg.com/@raruto/leaflet-elevation@0.3.9/libs/leaflet-distance-marker.min.js"><script>src="https://unpkg.com/leaflet@1.3.2/dist/leaflet.js"></script>
+    
 
 	<!-- leaflet-gpx -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.js"></script>
+  	<script src="https://kchehbou.github.io/js/leaflet-ui.js"></script>
 
 	<!-- leaflet-gpxgroup -->
 	<script src="https://kchehbou.github.io/js/leaflet-gpxgroup.min.js"></script>
+  
+
 
 	<!-- leaflet-elevation -->
 	<link rel="stylesheet" href="https://unpkg.com//@raruto/leaflet-elevation@0.3.4/leaflet-elevation.min.css" />
-	<script src="https://unpkg.com/@raruto/leaflet-elevation@0.3.9/leaflet-elevation.min.js"></script>
+	<script src="https://kchehbou.github.io/js/leaflet-elevation.min.js"></script>
 
-	<!-- leaflet-minimap -->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css" />
-	<script src="https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js"></script>
-
+  
 	<!-- leaflet-locatecontrol -->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol@0.67.0/dist/L.Control.Locate.min.css" />
 	<script src="https://unpkg.com/leaflet.locatecontrol@0.67.0/dist/L.Control.Locate.min.js"></script>
-
-	<!-- leaflet-pegman -->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet-pegman@0.0.8/leaflet-pegman.css" />
-	<script src="https://unpkg.com/leaflet-pegman@0.0.8/leaflet-pegman.js"></script>
 
 	<style>
 		.leaflet-control-locate a {
@@ -74,11 +72,9 @@
 		.leaflet-tooltip {
 			font-weight: 700;
 		}
-
 		#map {
 			height: 75%;
 		}
-
 		#elevation-div {
 			height: 25%;
 			font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -128,31 +124,11 @@
 			zoomControl: {
 				position: 'bottomright',
 			},
-			otmLayer: {
-				url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
-				options: {
-					maxZoom: 17,
-					attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
-				},
-			},
-			osmLayer: {
-				url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-				options: {
-					maxZoom: 19,
-					attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-				}
-			},
-			satelliteLayer: {
-				url: 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-				options: {
-					maxZoom: 18,
-					attribution: '&copy; <a href="http://www.esri.com/">Esri</a>',
-				},
-			},
+			
 			layersControl: {
 				options: {
-					position: 'topleft',
-					collapsed: false,
+					position: 'topright',
+					collapsed: true,
 				},
 			},
 			scaleControl: {
@@ -162,41 +138,26 @@
 					imperial: false,
 				},
 			},
-			miniMapControl: {
-				options: {
-					position: 'bottomleft',
-					toggleDisplay: false,
-					width: 75,
-					height: 75,
-					aimingRectOptions: {
-						color: '#2d2d2d',
-						weight: 0.1,
-					},
-					shadowRectOptions: {
-						color: '#000000',
-						weight: 0.5,
-						opacity: 0,
-						fillOpacity: 0,
-					},
-				},
-			},
-			pegmanControl: {
-				options: {
-					position: 'bottomright',
-					clickableStreetViewLayer: true,
-					theme: "leaflet-pegman-v3-small",
-				},
-			},
 			locateControl: {
 				options: {
 					position: "bottomright",
 				},
 			},
+
 			parkings: {
 				options: {
 					icon: {
-						iconUrl: 'https://kchehbou.github.io/points/parking-15.svg',
-						iconSize: [12, 12],
+						iconUrl: 'https://kchehbou.github.io/points/parking.jpg',
+						iconSize: [14, 14],
+            
+					},
+				},
+			},
+      chalets1: {
+				options: {
+					icon: {
+						iconUrl: 'https://kchehbou.github.io/points/chalets.jpg',
+						iconSize: [18, 18],
 					},
 				},
 			},
@@ -215,15 +176,12 @@
 				},
 			},
 		};
-		var tracks = [
-			"https://chibrams.github.io/Trails/DLoopJson.gpx",
-			"https://chibrams.github.io/Trails/MLoopJson.gpx",
-			"https://chibrams.github.io/Trails/MountMartinTrail.gpx",
-			"https://chibrams.github.io/Trails/ChalkRiver.gpx",
-			"https://chibrams.github.io/Trails/DRWalkingTrail.gpx",
-			"https://chibrams.github.io/Trails/HLoopJson.gpx",
-			"https://kchehbou.github.io/Trails/ChalkRiverDigit.gpx",
-		];
+				var trails = [
+			"https://chibrams.github.io/Trails/DLoopJson.gpx",			"https://chibrams.github.io/Trails/MLoopJson.gpx",
+"https://chibrams.github.io/Trails/MountMartinTrail.gpx",			"https://chibrams.github.io/Trails/ChalkRiver.gpx",	"https://chibrams.github.io/Trails/DRWalkingTrail.gpx",
+"https://chibrams.github.io/Trails/HLoopJson.gpx",
+"https://kchehbou.github.io/Trails/ChalkRiverDigit.gpx", "https://kchehbou.github.io/Trails/LoopS.gpx", "https://kchehbou.github.io/Trails/DMLoop.gpx",   "https://kchehbou.github.io/Trails/RaysJunction.gpx",
+];
 
 		var parkings = [
 			{latlng:[46.08993,-77.475383]},
@@ -236,33 +194,30 @@
 			{latlng:[46.015874,-77.448013]},
 			{latlng:[46.100682,-77.480769]},
 		];
+    
+  
+var chalets1 = [{latlng:[46.1065788,-77.4889035]},{latlng:[46.1026419,-77.4791419]},{latlng:[46.0870430,-77.4711718]},{latlng:[46.0761104,-77.4598527]}
+               ];
+  //  var chalets2 = 	L.marker([46.1026419,-77.4791419], {icon: greenIcon});
+	//	var chalets3 = 	L.marker([46.0870430,-77.4711718], {icon: greenIcon});
+    
 var polygons=	L.polygon([
 [46.0792092,-77.4775613],[46.0813527,-77.4804712], [46.0807644,-77.4814732],[46.0785496,-77.4786459],
-[46.0792092,-77.4775613]]).bindTooltip('Mu',{permanent:true,direction:'auto',color: 'red'});
+[46.0792092,-77.4775613]]).bindTooltip('',{permanent:true,direction:'auto',color: 'red'});
     
 		var map = L.map('map', opts.map);
 
 		var baseLayers = {};
-
-		baseLayers["ESRI World Imagery"] = L.tileLayer(opts.satelliteLayer.url, opts.satelliteLayer.options);
-		baseLayers["OpenTopoMap"] = new L.TileLayer(opts.otmLayer.url, opts.otmLayer.options);
-		baseLayers["OpenStreetMap"] = new L.TileLayer(opts.osmLayer.url, opts.osmLayer.options);
     
 
 		var controlZoom = new L.Control.Zoom(opts.zoomControl);
-		var controlLayer = L.control.layers(baseLayers, null, opts.layersControl.options);
 		var controlScale = L.control.scale(opts.scaleControl.options);
-		var controlMiniMap = new L.Control.MiniMap(new L.TileLayer(opts.osmLayer.url, opts.osmLayer.options), opts.miniMapControl.options);
-		var controlPegman = new L.Control.Pegman(opts.pegmanControl.options);
 		var controlLocate = L.control.locate(opts.locateControl.options);
-    
 
-		var routes = L.gpxGrroup(tracks, {
+		var routes = L.gpxGrroup(trails, {
 			points: parkings,
-      polygons: polygons,
 			points_options: opts.parkings.options,
-      polygons_options: opts.polygons.options,
-			elevation: true,
+      elevation: true,
 			elevation_options: {
 				theme: "yellow-theme",
 				detachedView: true,
@@ -272,6 +227,15 @@ var polygons=	L.polygon([
 			},
 			legend: true,
 			distanceMarkers: false,
+      legend_options: {
+      position: "topright",
+    },
+      
+		});
+    var routess = L.gpxGrroup(polygons, {
+			points: chalets1,
+			points_options: opts.chalets1.options,
+			      
 		});
  
 
@@ -292,21 +256,16 @@ var polygons=	L.polygon([
 			q('.minele .summaryvalue').innerHTML = track.elevation_min.toFixed(2) + " m";
 		});
 
-		controlLayer.addTo(map);
 		controlScale.addTo(map);
 		controlZoom.addTo(map);
-		controlPegman.addTo(map);
-		controlLocate.addTo(map);
-		controlMiniMap.addTo(map);
-
-		routes.addTo(map);
-
-		map.addLayer(baseLayers["OpenTopoMap"]);
-    
+		controlLocate.addTo(map);  
     polygons.addTo(map);
-       polygons.bindTooltip("My polygon",
-   {permanent: true, direction:"center"}
-  ).openTooltip();
+		routes.addTo(map);
+    routess.addTo(map);
+
+    
+   // chalets2.addTo(map);
+   // chalets3.addTo(map);
 			
   
 map.attributionControl.addAttribution('Map Data: &copy; <a href="https://github.com/adoroszlai">Attila Doroszlai</a> (<a href="https://github.com/adoroszlai/joebed/blob/gh-pages/LICENSE.md">MIT License</a>)');
