@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -118,11 +119,11 @@
 		var opts = {
 			map: {
 				center: [46.08,-77.45],
-				zoom: 6,
+				zoom: 10,
 				zoomControl: false,
 			},
 			zoomControl: {
-				position: 'bottomright',
+				position: 'bottomleft',
 			},
 			
 			layersControl: {
@@ -163,13 +164,12 @@
 			},
       polygons: {
         options:{
-        color:'red',
         weight:0.1,        
       },
       },
 			elevation: {
 				options: {
-					theme: 'yellow-theme',
+					theme: 'purple-theme',
 					// width: 500,
 					detachedView: true,
 					elevationDiv: '#elevation-div',
@@ -203,7 +203,7 @@ var chalets1 = [{latlng:[46.1065788,-77.4889035]},{latlng:[46.1026419,-77.479141
     
 var polygons=	L.polygon([
 [46.0792092,-77.4775613],[46.0813527,-77.4804712], [46.0807644,-77.4814732],[46.0785496,-77.4786459],
-[46.0792092,-77.4775613]]).bindTooltip('',{permanent:true,direction:'auto',color: 'red'});
+[46.0792092,-77.4775613]]).bindTooltip('Private Property',{permanent:false,direction:'auto',color: 'red'});
     
 		var map = L.map('map', opts.map);
 
@@ -219,7 +219,7 @@ var polygons=	L.polygon([
 			points_options: opts.parkings.options,
       elevation: true,
 			elevation_options: {
-				theme: "yellow-theme",
+				theme: "purple-theme",
 				detachedView: true,
 				elevationDiv: '#elevation-div',
 				followPositionMarker: true,
@@ -232,7 +232,7 @@ var polygons=	L.polygon([
     },
       
 		});
-    var routess = L.gpxGrroup(polygons, {
+    var Polygons = L.gpxGrroup(polygons, {
 			points: chalets1,
 			points_options: opts.chalets1.options,
 			      
@@ -255,15 +255,15 @@ var polygons=	L.polygon([
 			q('.maxele .summaryvalue').innerHTML = track.elevation_max.toFixed(2) + " m";
 			q('.minele .summaryvalue').innerHTML = track.elevation_min.toFixed(2) + " m";
 		});
+    
 
-		controlScale.addTo(map);
 		controlZoom.addTo(map);
-		controlLocate.addTo(map);  
     polygons.addTo(map);
 		routes.addTo(map);
-    routess.addTo(map);
-
+    Polygons.addTo(map);
     
+
+  
    // chalets2.addTo(map);
    // chalets3.addTo(map);
 			
