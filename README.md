@@ -4,7 +4,7 @@ A Leaflet plugin that allows to show Trails and their elevation profiles.
 
 
 <p align="center">
-    <a href="https://kchehbou.github.io/testing.html"><img src="https://raruto.github.io/img/leaflet-elevation.png" alt="Leaflet elevation viewer" /></a>
+    <a href="https://kchehbou.github.io/testing.html"><img src="leaflet-elevation.png" alt="Leaflet elevation viewer" /></a>
 </p>
 
 ---
