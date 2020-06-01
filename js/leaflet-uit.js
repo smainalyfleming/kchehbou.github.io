@@ -326,103 +326,7 @@
    return new t.Control.Locate(e)
   }, a
  }), window),
- function() {
-  L.Control.FullScreen = L.Control.extend({
-   options: {
-    position: "topleft",
-    title: "Full Screen",
-    titleCancel: "Exit Full Screen",
-    forceSeparateButton: !1,
-    forcePseudoFullscreen: !1,
-    fullscreenElement: !1
-   },
-   onAdd: function(t) {
-    var e, i = "leaflet-control-zoom-fullscreen",
-     o = "";
-    return e = t.zoomControl && !this.options.forceSeparateButton ? t.zoomControl._container : L.DomUtil.create("div", "leaflet-bar"), this.options.content ? o = this.options.content : i += " fullscreen-icon", this._createButton(this.options.title, i, o, e, this.toggleFullScreen, this), this._map.fullscreenControl = this, this._map.on("enterFullscreen exitFullscreen", this._toggleTitle, this), e
-   },
-   onRemove: function(e) {
-    L.DomEvent.off(this.link, "click", L.DomEvent.stopPropagation).off(this.link, "click", L.DomEvent.preventDefault).off(this.link, "click", this.toggleFullScreen, this), L.DomEvent.off(this._container, t.fullScreenEventName, L.DomEvent.stopPropagation).off(this._container, t.fullScreenEventName, L.DomEvent.preventDefault).off(this._container, t.fullScreenEventName, this._handleFullscreenChange, this), L.DomEvent.off(document, t.fullScreenEventName, L.DomEvent.stopPropagation).off(document, t.fullScreenEventName, L.DomEvent.preventDefault).off(document, t.fullScreenEventName, this._handleFullscreenChange, this)
-   },
-   _createButton: function(e, i, o, n, s, a) {
-    return this.link = L.DomUtil.create("a", i, n), this.link.href = "#", this.link.title = e, this.link.innerHTML = o, this.link.setAttribute("role", "button"), this.link.setAttribute("aria-label", e), L.DomEvent.on(this.link, "click", L.DomEvent.stopPropagation).on(this.link, "click", L.DomEvent.preventDefault).on(this.link, "click", s, a), L.DomEvent.on(n, t.fullScreenEventName, L.DomEvent.stopPropagation).on(n, t.fullScreenEventName, L.DomEvent.preventDefault).on(n, t.fullScreenEventName, this._handleFullscreenChange, a), L.DomEvent.on(document, t.fullScreenEventName, L.DomEvent.stopPropagation).on(document, t.fullScreenEventName, L.DomEvent.preventDefault).on(document, t.fullScreenEventName, this._handleFullscreenChange, a), this.link
-   },
-   toggleFullScreen: function() {
-    var e = this._map;
-    e._exitFired = !1, e._isFullscreen ? (t.supportsFullScreen && !this.options.forcePseudoFullscreen ? t.cancelFullScreen() : L.DomUtil.removeClass(this.options.fullscreenElement ? this.options.fullscreenElement : e._container, "leaflet-pseudo-fullscreen"), e.fire("exitFullscreen"), e._exitFired = !0, e._isFullscreen = !1) : (t.supportsFullScreen && !this.options.forcePseudoFullscreen ? t.requestFullScreen(this.options.fullscreenElement ? this.options.fullscreenElement : e._container) : L.DomUtil.addClass(this.options.fullscreenElement ? this.options.fullscreenElement : e._container, "leaflet-pseudo-fullscreen"), e.fire("enterFullscreen"), e._isFullscreen = !0)
-   },
-   _toggleTitle: function() {
-    this.link.title = this._map._isFullscreen ? this.options.title : this.options.titleCancel
-   },
-   _handleFullscreenChange: function() {
-    var e = this._map;
-    e.invalidateSize(), t.isFullScreen() || e._exitFired || (e.fire("exitFullscreen"), e._exitFired = !0, e._isFullscreen = !1)
-   }
-  }), L.Map.include({
-   toggleFullscreen: function() {
-    this.fullscreenControl.toggleFullScreen()
-   }
-  }), L.Map.addInitHook((function() {
-   this.options.fullscreenControl && this.addControl(L.control.fullscreen(this.options.fullscreenControlOptions))
-  })), L.control.fullscreen = function(t) {
-   return new L.Control.FullScreen(t)
-  };
-  var t = {
-    supportsFullScreen: !1,
-    isFullScreen: function() {
-     return !1
-    },
-    requestFullScreen: function() {},
-    cancelFullScreen: function() {},
-    fullScreenEventName: "",
-    prefix: ""
-   },
-   e = "webkit moz o ms khtml".split(" ");
-  if (void 0 !== document.exitFullscreen) t.supportsFullScreen = !0;
-  else {
-   for (var i = 0, o = e.length; i < o; i++)
-    if (t.prefix = e[i], void 0 !== document[t.prefix + "CancelFullScreen"]) {
-     t.supportsFullScreen = !0;
-     break
-    } void 0 !== document.msExitFullscreen && (t.prefix = "ms", t.supportsFullScreen = !0)
-  }
-  t.supportsFullScreen && ("ms" === t.prefix ? t.fullScreenEventName = "MSFullscreenChange" : t.fullScreenEventName = t.prefix + "fullscreenchange", t.isFullScreen = function() {
-   switch (this.prefix) {
-    case "":
-     return document.fullscreen;
-    case "webkit":
-     return document.webkitIsFullScreen;
-    case "ms":
-     return document.msFullscreenElement;
-    default:
-     return document[this.prefix + "FullScreen"]
-   }
-  }, t.requestFullScreen = function(t) {
-   switch (this.prefix) {
-    case "":
-     return t.requestFullscreen();
-    case "ms":
-     return t.msRequestFullscreen();
-    default:
-     return t[this.prefix + "RequestFullScreen"]()
-   }
-  }, t.cancelFullScreen = function() {
-   switch (this.prefix) {
-    case "":
-     return document.exitFullscreen();
-    case "ms":
-     return document.msExitFullscreen();
-    default:
-     return document[this.prefix + "CancelFullScreen"]()
-   }
-  }), "undefined" != typeof jQuery && (jQuery.fn.requestFullScreen = function() {
-   return this.each((function() {
-    var e = jQuery(this);
-    t.supportsFullScreen && t.requestFullScreen(e)
-   }))
-  }), window.fullScreenApi = t
- }(),
- /**
+  /**
   * leaflet-pegman
   *
   * @author    Raruto
@@ -1102,12 +1006,6 @@
      },
      _handleMouseOut: function(t) {
       i || this._disableInteractions()
-     },
-     _onExitFullscreen: function() {
-      this._map.options.gestureHandling && this._map.gestureHandling.enable()
-     },
-     _onEnterFullscreen: function() {
-      this._map.options.gestureHandling && this._map.gestureHandling.disable()
      }
     });
    L.Map.mergeOptions({
@@ -2664,12 +2562,7 @@
    locateControl: {
     position: "bottomright"
    },
-   fullscreenControl: {
-    position: "topright",
-    title: "Enter Fullscreen",
-    titleCancel: "Exit Fullscreen",
-    forceSeparateButton: !0
-   },
+
    layersControl: {
     inline: !0,
     position: "topleft"
@@ -2737,7 +2630,7 @@
   };
 
   function e() {
-   this.zoomControl && this.zoomControl.remove(), this.fullscreenControl && this.options.fullscreenControl && !this.options.zoomControl && this.fullscreenControl.remove(), this.searchControl && this.options.searchControl && this.searchControl.remove(), this.attributionControl && this.attributionControl.remove()
+   this.zoomControl && this.zoomControl.remove(),  this.searchControl && this.options.searchControl && this.searchControl.remove(), this.attributionControl && this.attributionControl.remove()
   }
 
   function i() {
@@ -2853,7 +2746,6 @@
    scaleControl: !0,
    pegmanControl: !0,
    locateControl: !0,
-   fullscreenControl: !0,
    layersControl: !0,
    minimapControl: !0,
    editInOSMControl: !0,
