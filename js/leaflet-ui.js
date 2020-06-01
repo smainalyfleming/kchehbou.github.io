@@ -326,7 +326,7 @@
    return new t.Control.Locate(e)
   }, a
  }), window),
-  /**
+ /**
   * leaflet-pegman
   *
   * @author    Raruto
@@ -929,7 +929,7 @@
      _isTouching: !1,
      _isFading: !1,
      addHooks: function() {
-      this._handleTouch = L.bind(this._handleTouch, this), this._setGestureHandlingOptions(), this._disableInteractions(), this._map._container.addEventListener("touchstart", this._handleTouch), this._map._container.addEventListener("touchmove", this._handleTouch), this._map._container.addEventListener("touchend", this._handleTouch), this._map._container.addEventListener("touchcancel", this._handleTouch), this._map._container.addEventListener("click", this._handleTouch), L.DomEvent.on(this._map._container, "mousewheel", this._handleScroll, this), L.DomEvent.on(this._map, "mouseover", this._handleMouseOver, this), L.DomEvent.on(this._map, "mouseout", this._handleMouseOut, this), L.DomEvent.on(this._map, "movestart", this._handleDragging, this), L.DomEvent.on(this._map, "move", this._handleDragging, this), L.DomEvent.on(this._map, "moveend", this._handleDragging, this) 
+      this._handleTouch = L.bind(this._handleTouch, this), this._setGestureHandlingOptions(), this._disableInteractions(), this._map._container.addEventListener("touchstart", this._handleTouch), this._map._container.addEventListener("touchmove", this._handleTouch), this._map._container.addEventListener("touchend", this._handleTouch), this._map._container.addEventListener("touchcancel", this._handleTouch), this._map._container.addEventListener("click", this._handleTouch), L.DomEvent.on(this._map._container, "mousewheel", this._handleScroll, this), L.DomEvent.on(this._map, "mouseover", this._handleMouseOver, this), L.DomEvent.on(this._map, "mouseout", this._handleMouseOut, this), L.DomEvent.on(this._map, "movestart", this._handleDragging, this), L.DomEvent.on(this._map, "move", this._handleDragging, this), L.DomEvent.on(this._map, "moveend", this._handleDragging, this)
      },
      removeHooks: function() {
       this._enableInteractions(), this._map._container.removeEventListener("touchstart", this._handleTouch), this._map._container.removeEventListener("touchmove", this._handleTouch), this._map._container.removeEventListener("touchend", this._handleTouch), this._map._container.removeEventListener("touchcancel", this._handleTouch), this._map._container.removeEventListener("click", this._handleTouch), L.DomEvent.off(this._map._container, "mousewheel", this._handleScroll, this), L.DomEvent.off(this._map, "mouseover", this._handleMouseOver, this), L.DomEvent.off(this._map, "mouseout", this._handleMouseOut, this), L.DomEvent.off(this._map, "movestart", this._handleDragging, this), L.DomEvent.off(this._map, "move", this._handleDragging, this), L.DomEvent.off(this._map, "moveend", this._handleDragging, this), L.DomUtil.removeClass(this._map._container, "leaflet-gesture-handling")
@@ -2630,14 +2630,14 @@
   };
 
   function e() {
-   this.zoomControl && this.zoomControl.remove(),  this.searchControl && this.options.searchControl && this.searchControl.remove(), this.attributionControl && this.attributionControl.remove()
+   this.zoomControl && this.zoomControl.remove(), this.searchControl && this.options.searchControl && this.searchControl.remove(), this.attributionControl && this.attributionControl.remove()
   }
 
   function i() {
    for (let e in t) !0 === this.options[e] || void 0 === this.options[e] ? this.options[e] = t[e] : "object" == typeof this.options[e] && this.options[e] instanceof Array == !1 && (this.options[e] = p(t[e], this.options[e]));
    if (this.options.apiKeys && (this.options.apiKeys.thunderforest && (this.options.mapTypes.terrain.options.apikey = this.options.apiKeys.thunderforest), this.options.apiKeys.google && (this.options.pegmanControl.apiKey = this.options.apiKeys.google)), this.options.mapTypes.terrain.options.apikey) {
     var e = this.options.mapTypes.terrain.url; - 1 === e.indexOf("apikey=") && (this.options.mapTypes.terrain.url += (-1 === e.indexOf("?") ? "?" : "&") + "apikey={apikey}")
-   }!1 === this.options.mapTypeIds.includes(this.options.mapTypeId) && this.options.mapTypeIds.length > 0 && (this.options.mapTypeId = this.options.mapTypeIds[0]), this.options.searchControl && this.options.searchControl.detectUserLang && (this.options.searchControl.querylang = window.navigator.languages ? window.navigator.languages[0] : window.navigator.userLanguage || window.navigator.language), this.options.searchControl && this.options.searchControl.querylang && (this.options.searchControl.url = this.options.searchControl.url.replace("{querylang}", this.options.searchControl.querylang)), !this.options.minimapControl || this.options.center || this.options.zoom || this.setView([0, 0], 0)
+   }!1 === this.options.mapTypeIds.includes(this.options.mapTypeId) && this.options.mapTypeIds.length > 0 && (this.options.mapTypeId = this.options.mapTypeIds[0]), this.options.searchControl && this.options.searchControl.detectUserLang && (this.options.searchControl.querylang = window.navigator.languages ? window.navigator.languages[0] : window.navigator.userLanguage || window.navigator.language), this.options.searchControl && this.options.searchControl.querylang && (this.options.searchControl.url = this.options.searchControl.url.replace("{querylang}", this.options.searchControl.querylang)), 0)
   }
 
   function o() {
@@ -2653,11 +2653,9 @@
      t && t.layer && t.layer.mapTypeId && (this._prevMapTypeId = this._lastMapTypeId, this._lastMapTypeId = t.layer.mapTypeId)
     })), this.on("baselayerchange", (function(t) {
      t && t.layer && t.layer.mapTypeId && t.layer.bringToBack && t.layer.bringToBack()
-    })), this.options.layersControl && (t.layers = new L.Control.Layers(i, null, this.options.layersControl), this.on("zoomend", r, this)), this.options.attributionControl && this.attributionControl && (this.attributionControl.addTo(this), t.attribution = this.attributionControl, this.on("baselayerchange", L.bind(n, this, this.attributionControl.options.prefix))), this.options.editInOSMControl && (t.editInOSM = new L.Control.EditInOSM(this.options.editInOSMControl)), this.options.scaleControl && (t.scale = new L.Control.Scale(this.options.scaleControl)), this.options.zoomControl && this.zoomControl && (this.zoomControl.setPosition(this.options.zoomControl.position), this.zoomControl.addTo(this), t.zoom = this.zoomControl), this.options.pegmanControl && (t.pegman = new L.Control.Pegman(this.options.pegmanControl)), this.options.locateControl && (t.locate = new L.Control.Locate(this.options.locateControl)), this.options.searchControl && (t.search = this.searchControl = new L.Control.Search(this.options.searchControl)), this.options.printControl && (t.print = new L.Control.EasyPrint(this.options.printControl)), this.options.loadingControl && (t.loading = new L.Control.Loading(this.options.loadingControl)), this.options.minimapControl) {
-    var l = this.options.minimapControl.mapOptions.mapTypeId,
-     h = this.options.mapTypes[l];
-    h && ((h = new L.TileLayer(h.url, h.options)).mapTypeId = l, t.minimap = new L.Control.MiniMap(h, this.options.minimapControl), t.minimap._mainMapBaseLayers = i)
-   }
+    })), this.options.layersControl && (t.layers = new L.Control.Layers(i, null, this.options.layersControl), this.on("zoomend", r, this)), this.options.attributionControl && this.attributionControl && (this.attributionControl.addTo(this), t.attribution = this.attributionControl, this.on("baselayerchange", L.bind(n, this, this.attributionControl.options.prefix))), this.options.editInOSMControl && (t.editInOSM = new L.Control.EditInOSM(this.options.editInOSMControl)), this.options.scaleControl && (t.scale = new L.Control.Scale(this.options.scaleControl)), this.options.zoomControl && this.zoomControl && (this.zoomControl.setPosition(this.options.zoomControl.position), this.zoomControl.addTo(this), t.zoom = this.zoomControl), this.options.pegmanControl && (t.pegman = new L.Control.Pegman(this.options.pegmanControl)), this.options.locateControl && (t.locate = new L.Control.Locate(this.options.locateControl)), this.options.searchControl && (t.search = this.searchControl = new L.Control.Search(this.options.searchControl)), this.options.printControl && (t.print = new L.Control.EasyPrint(this.options.printControl)), this.options.loadingControl && (t.loading = new L.Control.Loading(this.options.loadingControl))) {
+    h = this.options.mapTypes[l];
+    }
    this.options.resizerControl && (t.resizer = new L.Control.Resizer(this.options.resizerControl));
    for (let e in t) t[e].addTo && t[e].addTo(this);
    if (this.controls = t, this.whenReady((function() {
@@ -2747,7 +2745,6 @@
    pegmanControl: !0,
    locateControl: !0,
    layersControl: !0,
-   minimapControl: !0,
    editInOSMControl: !0,
    loadingControl: !0,
    searchControl: !0,
@@ -2756,11 +2753,9 @@
    disableDefaultUI: !1,
    includeLeafletCSS: !0,
    apiKeys: void 0,
-   _isMiniMap: !1
-  }), L.Map.addInitHook((function() {
-   e.call(this), this.options._isMiniMap || this.options.disableDefaultUI || (i.call(this), o.call(this))
+   }), L.Map.addInitHook((function() {
+   e.call(this),this.options.disableDefaultUI || (i.call(this), o.call(this))
   }));
-  var l = L.Control.MiniMap.prototype.onAdd;
 
   function h(t, e) {
    return t.some(t => e.includes(t))
@@ -2781,35 +2776,7 @@
     });
    return p(t, ...e)
   }
-  L.Control.MiniMap.include({
-   onAdd: function(t) {
-    var e = l.call(this, t);
-    return this._miniMap && (this._miniMap.doubleClickZoom.disable(), this._miniMap.touchZoom.disable(), this._miniMap.scrollWheelZoom.disable()), this.options.toggleMapTypes && (L.DomEvent.on(t, "baselayerchange", this._handleMainMapTypeChange, this), L.DomEvent.on(this._container, "click", this._handleMiniMapTypeToggle, this)), e
-   },
-   _handleMainMapTypeChange: function(t) {
-    if (!this._handligMiniMapTypeToggle && t && t.layer) {
-     var e, i, o = this._mainMap,
-      n = this._layer.mapTypeId,
-      s = t.layer.mapTypeId;
-     if (o.options.mapTypeIds.length > 0 && h(o.options.mapTypeIds, s)) s != n && (this._lastMapTypeId = s), "satellite" == s && "satellite" == n ? e = this._lastMapTypeId : "satellite" != s && "satellite" != n && (e = "satellite"), (i = o.options.mapTypes[e]) && ((i = new L.TileLayer(i.url, i.options)).mapTypeId = e, this._lastMapTypeId = n, this.changeLayer(i))
-    }
-   },
-   _handleMiniMapTypeToggle: function() {
-    if (this._handligMiniMapTypeToggle = !0, this._layer && this._mainMapBaseLayers) {
-     var t, e, i = this._mainMap,
-      o = this._layer.mapTypeId;
-     for (let t in this._mainMapBaseLayers)
-      if (i.hasLayer(this._mainMapBaseLayers[t]) && o != this._mainMapBaseLayers[t].mapTypeId) {
-       this._mainMapBaseLayers[t].mapTypeId;
-       break
-      } if (i.options.mapTypeIds.length > 0 && h(i.options.mapTypeIds, o))
-      if (t = this._lastMapTypeId || i.options.mapTypeId, "satellite" != this._lastMapTypeId && "satellite" != o && (t = "satellite"), e = i.options.mapTypes[t]) {
-       (e = new L.TileLayer(e.url, e.options)).mapTypeId = t, this._lastMapTypeId = o, this.changeLayer(e);
-       for (let t in this._mainMapBaseLayers) this._mainMapBaseLayers[t].remove(), this._lastMapTypeId == this._mainMapBaseLayers[t].mapTypeId && this._mainMapBaseLayers[t].addTo(i)
-      } this._handligMiniMapTypeToggle = !1
-    }
-   }
-  })
+  
  }()
 }));
 //# sourceMappingURL=leaflet-ui.js.map
