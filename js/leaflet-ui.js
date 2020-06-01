@@ -750,269 +750,269 @@
   }(void 0, (function(t) {
    var e = {
      ar: {
-      touch: "Ø§Ø³ØªØ®Ø¯Ù… Ø¥ØµØ¨Ø¹ÙŠÙ† Ù„ØªØ­Ø±ÙŠÙƒ Ø§Ù„Ø®Ø±ÙŠØ·Ø©",
-      scroll: "â€Ø§Ø³ØªØ®Ø¯Ù… ctrl + scroll Ù„ØªØµØºÙŠØ±/ØªÙƒØ¨ÙŠØ± Ø§Ù„Ø®Ø±ÙŠØ·Ø©",
-      scrollMac: "ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ø³ØªØ®Ø¯Ø§Ù… âŒ˜ + Ø§Ù„ØªÙ…Ø±ÙŠØ± Ù„ØªÙƒØ¨ÙŠØ±/ØªØµØºÙŠØ± Ø§Ù„Ø®Ø±ÙŠØ·Ø©"
+      touch: "استخدم إصبعين لتحريك الخريطة",
+      scroll: "‏استخدم ctrl + scroll لتصغير/تكبير الخريطة",
+      scrollMac: "يمكنك استخدام ⌘ + التمرير لتكبير/تصغير الخريطة"
      },
      bg: {
-      touch: "Ð˜Ð·Ð¿Ð¾Ð»Ð·Ð²Ð°Ð¹Ñ‚Ðµ Ð´Ð²Ð° Ð¿Ñ€ÑŠÑÑ‚Ð°, Ð·Ð° Ð´Ð° Ð¿Ñ€ÐµÐ¼ÐµÑÑ‚Ð¸Ñ‚Ðµ ÐºÐ°Ñ€Ñ‚Ð°Ñ‚Ð°",
-      scroll: "Ð—Ð°Ð´Ñ€ÑŠÐ¶Ñ‚Ðµ Ð±ÑƒÑ‚Ð¾Ð½Ð° Ctrl Ð½Ð°Ñ‚Ð¸ÑÐ½Ð°Ñ‚, Ð´Ð¾ÐºÐ°Ñ‚Ð¾ Ð¿Ñ€ÐµÐ²ÑŠÑ€Ñ‚Ð°Ñ‚Ðµ, Ð·Ð° Ð´Ð° Ð¿Ñ€Ð¾Ð¼ÐµÐ½Ð¸Ñ‚Ðµ Ð¼Ð°Ñ‰Ð°Ð±Ð° Ð½Ð° ÐºÐ°Ñ€Ñ‚Ð°Ñ‚Ð°",
-      scrollMac: "Ð—Ð°Ð´Ñ€ÑŠÐ¶Ñ‚Ðµ Ð±ÑƒÑ‚Ð¾Ð½Ð° âŒ˜ Ð½Ð°Ñ‚Ð¸ÑÐ½Ð°Ñ‚, Ð´Ð¾ÐºÐ°Ñ‚Ð¾ Ð¿Ñ€ÐµÐ²ÑŠÑ€Ñ‚Ð°Ñ‚Ðµ, Ð·Ð° Ð´Ð° Ð¿Ñ€Ð¾Ð¼ÐµÐ½Ð¸Ñ‚Ðµ Ð¼Ð°Ñ‰Ð°Ð±Ð° Ð½Ð° ÐºÐ°Ñ€Ñ‚Ð°Ñ‚Ð°"
+      touch: "Използвайте два пръста, за да преместите картата",
+      scroll: "Задръжте бутона Ctrl натиснат, докато превъртате, за да промените мащаба на картата",
+      scrollMac: "Задръжте бутона ⌘ натиснат, докато превъртате, за да промените мащаба на картата"
      },
      bn: {
-      touch: "à¦®à¦¾à¦¨à¦šà¦¿à¦¤à§à¦°à¦Ÿà¦¿à¦•à§‡ à¦¸à¦°à¦¾à¦¤à§‡ à¦¦à§à¦Ÿà¦¿ à¦†à¦™à§à¦—à§à¦² à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨",
-      scroll: "à¦®à§à¦¯à¦¾à¦ª à¦œà§à¦® à¦•à¦°à¦¤à§‡ ctrl + scroll à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨",
-      scrollMac: "à¦®à§à¦¯à¦¾à¦ªà§‡ à¦œà§à¦® à¦•à¦°à¦¤à§‡ âŒ˜ à¦¬à§‹à¦¤à¦¾à¦® à¦Ÿà¦¿à¦ªà§‡ à¦¸à§à¦•à§à¦°à¦² à¦•à¦°à§à¦¨"
+      touch: "মানচিত্রটিকে সরাতে দুটি আঙ্গুল ব্যবহার করুন",
+      scroll: "ম্যাপ জুম করতে ctrl + scroll ব্যবহার করুন",
+      scrollMac: "ম্যাপে জুম করতে ⌘ বোতাম টিপে স্ক্রল করুন"
      },
      ca: {
       touch: "Fes servir dos dits per moure el mapa",
       scroll: "Prem la tecla Control mentre et desplaces per apropar i allunyar el mapa",
-      scrollMac: "Prem la tecla âŒ˜ mentre et desplaces per apropar i allunyar el mapa"
+      scrollMac: "Prem la tecla ⌘ mentre et desplaces per apropar i allunyar el mapa"
      },
      cs: {
-      touch: "K posunutÃ­ mapy pouÅ¾ijte dva prsty",
-      scroll: "Velikost zobrazenÃ­ mapy zmÄ›Åˆte podrÅ¾enÃ­m klÃ¡vesy Ctrl a posouvÃ¡nÃ­m koleÄka myÅ¡i",
-      scrollMac: "Velikost zobrazenÃ­ mapy zmÄ›nÃ­te podrÅ¾enÃ­m klÃ¡vesy âŒ˜ a posunutÃ­m koleÄka myÅ¡i / touchpadu"
+      touch: "K posunutí mapy použijte dva prsty",
+      scroll: "Velikost zobrazení mapy změňte podržením klávesy Ctrl a posouváním kolečka myši",
+      scrollMac: "Velikost zobrazení mapy změníte podržením klávesy ⌘ a posunutím kolečka myši / touchpadu"
      },
      da: {
       touch: "Brug to fingre til at flytte kortet",
-      scroll: "Brug ctrl + rullefunktionen til at zoome ind og ud pÃ¥ kortet",
-      scrollMac: "Brug âŒ˜ + rullefunktionen til at zoome ind og ud pÃ¥ kortet"
+      scroll: "Brug ctrl + rullefunktionen til at zoome ind og ud på kortet",
+      scrollMac: "Brug ⌘ + rullefunktionen til at zoome ind og ud på kortet"
      },
      de: {
       touch: "Verschieben der Karte mit zwei Fingern",
       scroll: "Verwende Strg + Scroll zum Zoomen der Karte",
-      scrollMac: "Verwende âŒ˜ + Scroll zum Zoomen der Karte"
+      scrollMac: "Verwende ⌘ + Scroll zum Zoomen der Karte"
      },
      el: {
-      touch: "Î§ÏÎ·ÏƒÎ¹Î¼Î¿Ï€Î¿Î¹Î®ÏƒÏ„Îµ Î´ÏÎ¿ Î´Î¬Ï‡Ï„Ï…Î»Î± Î³Î¹Î± Î¼ÎµÏ„Î±ÎºÎ¯Î½Î·ÏƒÎ· ÏƒÏ„Î¿Î½ Ï‡Î¬ÏÏ„Î·",
-      scroll: "Î§ÏÎ·ÏƒÎ¹Î¼Î¿Ï€Î¿Î¹Î®ÏƒÏ„Îµ Ï„Î¿ Ï€Î»Î®ÎºÏ„ÏÎ¿ Ctrl ÎºÎ±Î¹ ÎºÏÎ»Î¹ÏƒÎ·, Î³Î¹Î± Î½Î± Î¼ÎµÎ³ÎµÎ¸ÏÎ½ÎµÏ„Îµ Ï„Î¿Î½ Ï‡Î¬ÏÏ„Î·",
-      scrollMac: "Î§ÏÎ·ÏƒÎ¹Î¼Î¿Ï€Î¿Î¹Î®ÏƒÏ„Îµ Ï„Î¿ Ï€Î»Î®ÎºÏ„ÏÎ¿ âŒ˜ + ÎºÏÎ»Î¹ÏƒÎ· Î³Î¹Î± ÎµÏƒÏ„Î¯Î±ÏƒÎ· ÏƒÏ„Î¿Î½ Ï‡Î¬ÏÏ„Î·"
+      touch: "Χρησιμοποιήστε δύο δάχτυλα για μετακίνηση στον χάρτη",
+      scroll: "Χρησιμοποιήστε το πλήκτρο Ctrl και κύλιση, για να μεγεθύνετε τον χάρτη",
+      scrollMac: "Χρησιμοποιήστε το πλήκτρο ⌘ + κύλιση για εστίαση στον χάρτη"
      },
      en: {
       touch: "Use two fingers to move the map",
       scroll: "Use ctrl + scroll to zoom the map",
-      scrollMac: "Use âŒ˜ + scroll to zoom the map"
+      scrollMac: "Use ⌘ + scroll to zoom the map"
      },
      "en-AU": {
       touch: "Use two fingers to move the map",
       scroll: "Use ctrl + scroll to zoom the map",
-      scrollMac: "Use âŒ˜ + scroll to zoom the map"
+      scrollMac: "Use ⌘ + scroll to zoom the map"
      },
      "en-GB": {
       touch: "Use two fingers to move the map",
       scroll: "Use ctrl + scroll to zoom the map",
-      scrollMac: "Use âŒ˜ + scroll to zoom the map"
+      scrollMac: "Use ⌘ + scroll to zoom the map"
      },
      es: {
       touch: "Para mover el mapa, utiliza dos dedos",
-      scroll: "MantÃ©n pulsada la tecla Ctrl mientras te desplazas para acercar o alejar el mapa",
-      scrollMac: "MantÃ©n pulsada la tecla âŒ˜ mientras te desplazas para acercar o alejar el mapa"
+      scroll: "Mantén pulsada la tecla Ctrl mientras te desplazas para acercar o alejar el mapa",
+      scrollMac: "Mantén pulsada la tecla ⌘ mientras te desplazas para acercar o alejar el mapa"
      },
      eu: {
       touch: "Erabili bi hatz mapa mugitzeko",
       scroll: "Mapan zooma aplikatzeko, sakatu Ktrl eta egin gora edo behera",
-      scrollMac: "Eduki sakatuta âŒ˜ eta egin gora eta behera mapa handitu eta txikitzeko"
+      scrollMac: "Eduki sakatuta ⌘ eta egin gora eta behera mapa handitu eta txikitzeko"
      },
      fa: {
-      touch: "Ø¨Ø±Ø§ÛŒ Ø­Ø±Ú©Øª Ø¯Ø§Ø¯Ù† Ù†Ù‚Ø´Ù‡ Ø§Ø² Ø¯Ùˆ Ø§Ù†Ú¯Ø´Øª Ø§Ø³ØªÙØ§Ø¯Ù‡ Ú©Ù†ÛŒØ¯.",
-      scroll: "â€Ø¨Ø±Ø§ÛŒ Ø¨Ø²Ø±Ú¯â€ŒÙ†Ù…Ø§ÛŒÛŒ Ù†Ù‚Ø´Ù‡ Ø§Ø² ctrl + scroll Ø§Ø³ØªÙØ§Ø¯Ù‡ Ú©Ù†ÛŒØ¯",
-      scrollMac: "Ø¨Ø±Ø§ÛŒ Ø¨Ø²Ø±Ú¯â€ŒÙ†Ù…Ø§ÛŒÛŒ Ù†Ù‚Ø´Ù‡ØŒ Ø§Ø² âŒ˜ + Ù¾ÛŒÙ…Ø§ÛŒØ´ Ø§Ø³ØªÙØ§Ø¯Ù‡ Ú©Ù†ÛŒØ¯."
+      touch: "برای حرکت دادن نقشه از دو انگشت استفاده کنید.",
+      scroll: "‏برای بزرگ‌نمایی نقشه از ctrl + scroll استفاده کنید",
+      scrollMac: "برای بزرگ‌نمایی نقشه، از ⌘ + پیمایش استفاده کنید."
      },
      fi: {
-      touch: "SiirrÃ¤ karttaa kahdella sormella.",
-      scroll: "Zoomaa karttaa painamalla Ctrl-painiketta ja vierittÃ¤mÃ¤llÃ¤.",
-      scrollMac: "Zoomaa karttaa pitÃ¤mÃ¤llÃ¤ painike âŒ˜ painettuna ja vierittÃ¤mÃ¤llÃ¤."
+      touch: "Siirrä karttaa kahdella sormella.",
+      scroll: "Zoomaa karttaa painamalla Ctrl-painiketta ja vierittämällä.",
+      scrollMac: "Zoomaa karttaa pitämällä painike ⌘ painettuna ja vierittämällä."
      },
      fil: {
       touch: "Gumamit ng dalawang daliri upang iusog ang mapa",
       scroll: "Gamitin ang ctrl + scroll upang i-zoom ang mapa",
-      scrollMac: "Gamitin ang âŒ˜ + scroll upang i-zoom ang mapa"
+      scrollMac: "Gamitin ang ⌘ + scroll upang i-zoom ang mapa"
      },
      fr: {
-      touch: "Utilisez deux doigts pour dÃ©placer la carte",
-      scroll: "Vous pouvez zoomer sur la carte Ã  l'aide de CTRL+Molette de dÃ©filement",
-      scrollMac: "Vous pouvez zoomer sur la carte Ã  l'aide de âŒ˜+Molette de dÃ©filement"
+      touch: "Utilisez deux doigts pour déplacer la carte",
+      scroll: "Vous pouvez zoomer sur la carte à l'aide de CTRL+Molette de défilement",
+      scrollMac: "Vous pouvez zoomer sur la carte à l'aide de ⌘+Molette de défilement"
      },
      gl: {
       touch: "Utiliza dous dedos para mover o mapa",
       scroll: "Preme Ctrl mentres te desprazas para ampliar o mapa",
-      scrollMac: "Preme âŒ˜ e desprÃ¡zate para ampliar o mapa"
+      scrollMac: "Preme ⌘ e desprázate para ampliar o mapa"
      },
      gu: {
-      touch: "àª¨àª•àª¶à«‹ àª–àª¸à«‡àª¡àªµàª¾ àª¬à«‡ àª†àª‚àª—àª³à«€àª“àª¨à«‹ àª‰àªªàª¯à«‹àª— àª•àª°à«‹",
-      scroll: "àª¨àª•àª¶àª¾àª¨à«‡ àªà«‚àª® àª•àª°àªµàª¾ àª®àª¾àªŸà«‡ ctrl + àª¸à«àª•à«àª°à«‹àª²àª¨à«‹ àª‰àªªàª¯à«‹àª— àª•àª°à«‹",
-      scrollMac: "àª¨àª•àª¶àª¾àª¨à«‡ àªà«‚àª® àª•àª°àªµàª¾ âŒ˜ + àª¸à«àª•à«àª°à«‹àª²àª¨à«‹ àª‰àªªàª¯à«‹àª— àª•àª°à«‹"
+      touch: "નકશો ખસેડવા બે આંગળીઓનો ઉપયોગ કરો",
+      scroll: "નકશાને ઝૂમ કરવા માટે ctrl + સ્ક્રોલનો ઉપયોગ કરો",
+      scrollMac: "નકશાને ઝૂમ કરવા ⌘ + સ્ક્રોલનો ઉપયોગ કરો"
      },
      hi: {
-      touch: "à¤®à¥ˆà¤ª à¤à¤• à¤œà¤—à¤¹ à¤¸à¥‡ à¤¦à¥‚à¤¸à¤°à¥€ à¤œà¤—à¤¹ à¤²à¥‡ à¤œà¤¾à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤ à¤¦à¥‹ à¤‰à¤‚à¤—à¤²à¤¿à¤¯à¥‹à¤‚ à¤•à¤¾ à¤‡à¤¸à¥à¤¤à¥‡à¤®à¤¾à¤² à¤•à¤°à¥‡à¤‚",
-      scroll: "à¤®à¥ˆà¤ª à¤•à¥‹ à¤œà¤¼à¥‚à¤® à¤•à¤°à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤ ctrl + à¤¸à¥à¤•à¥à¤°à¥‹à¤² à¤•à¤¾ à¤‰à¤ªà¤¯à¥‹à¤— à¤•à¤°à¥‡à¤‚",
-      scrollMac: "à¤®à¥ˆà¤ª à¤•à¥‹ à¤œà¤¼à¥‚à¤® à¤•à¤°à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤ âŒ˜ + à¤¸à¥à¤•à¥à¤°à¥‹à¤² à¤•à¤¾ à¤‰à¤ªà¤¯à¥‹à¤— à¤•à¤°à¥‡à¤‚"
+      touch: "मैप एक जगह से दूसरी जगह ले जाने के लिए दो उंगलियों का इस्तेमाल करें",
+      scroll: "मैप को ज़ूम करने के लिए ctrl + स्क्रोल का उपयोग करें",
+      scrollMac: "मैप को ज़ूम करने के लिए ⌘ + स्क्रोल का उपयोग करें"
      },
      hr: {
-      touch: "PomiÄite kartu pomoÄ‡u dva prsta",
-      scroll: "Upotrijebite Ctrl i klizaÄ miÅ¡a da biste zumirali kartu",
-      scrollMac: "Upotrijebite gumb âŒ˜ dok se pomiÄete za zumiranje karte"
+      touch: "Pomičite kartu pomoću dva prsta",
+      scroll: "Upotrijebite Ctrl i klizač miša da biste zumirali kartu",
+      scrollMac: "Upotrijebite gumb ⌘ dok se pomičete za zumiranje karte"
      },
      hu: {
-      touch: "KÃ©t ujjal mozgassa a tÃ©rkÃ©pet",
-      scroll: "A tÃ©rkÃ©p a ctrl + gÃ¶rgetÃ©s hasznÃ¡latÃ¡val nagyÃ­thatÃ³",
-      scrollMac: "A tÃ©rkÃ©p a âŒ˜ + gÃ¶rgetÃ©s hasznÃ¡latÃ¡val nagyÃ­thatÃ³"
+      touch: "Két ujjal mozgassa a térképet",
+      scroll: "A térkép a ctrl + görgetés használatával nagyítható",
+      scrollMac: "A térkép a ⌘ + görgetés használatával nagyítható"
      },
      id: {
       touch: "Gunakan dua jari untuk menggerakkan peta",
       scroll: "Gunakan ctrl + scroll untuk memperbesar atau memperkecil peta",
-      scrollMac: "Gunakan âŒ˜ + scroll untuk memperbesar atau memperkecil peta"
+      scrollMac: "Gunakan ⌘ + scroll untuk memperbesar atau memperkecil peta"
      },
      it: {
       touch: "Utilizza due dita per spostare la mappa",
       scroll: "Utilizza CTRL + scorrimento per eseguire lo zoom della mappa",
-      scrollMac: "Utilizza âŒ˜ + scorrimento per eseguire lo zoom della mappa"
+      scrollMac: "Utilizza ⌘ + scorrimento per eseguire lo zoom della mappa"
      },
      iw: {
-      touch: "×”×–×– ××ª ×”×ž×¤×” ×‘××ž×¦×¢×•×ª ×©×ª×™ ××¦×‘×¢×•×ª",
-      scroll: "â€××¤×©×¨ ×œ×©× ×•×ª ××ª ×ž×¨×—×§ ×”×ª×¦×•×’×” ×‘×ž×¤×” ×‘××ž×¦×¢×•×ª ×ž×§×© ctrl ×•×’×œ×™×œ×”",
-      scrollMac: "××¤×©×¨ ×œ×©× ×•×ª ××ª ×ž×¨×—×§ ×”×ª×¦×•×’×” ×‘×ž×¤×” ×‘××ž×¦×¢×•×ª ×ž×§×© âŒ˜ ×•×’×œ×™×œ×”"
+      touch: "הזז את המפה באמצעות שתי אצבעות",
+      scroll: "‏אפשר לשנות את מרחק התצוגה במפה באמצעות מקש ctrl וגלילה",
+      scrollMac: "אפשר לשנות את מרחק התצוגה במפה באמצעות מקש ⌘ וגלילה"
      },
      ja: {
-      touch: "åœ°å›³ã‚’ç§»å‹•ã•ã›ã‚‹ã«ã¯æŒ‡ 2 æœ¬ã§æ“ä½œã—ã¾ã™",
-      scroll: "åœ°å›³ã‚’ã‚ºãƒ¼ãƒ ã™ã‚‹ã«ã¯ã€Ctrl ã‚­ãƒ¼ã‚’æŠ¼ã—ãªãŒã‚‰ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã—ã¦ãã ã•ã„",
-      scrollMac: "åœ°å›³ã‚’ã‚ºãƒ¼ãƒ ã™ã‚‹ã«ã¯ã€âŒ˜ ã‚­ãƒ¼ã‚’æŠ¼ã—ãªãŒã‚‰ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã—ã¦ãã ã•ã„"
+      touch: "地図を移動させるには指 2 本で操作します",
+      scroll: "地図をズームするには、Ctrl キーを押しながらスクロールしてください",
+      scrollMac: "地図をズームするには、⌘ キーを押しながらスクロールしてください"
      },
      kn: {
       touch: "Use two fingers to move the map",
       scroll: "Use Ctrl + scroll to zoom the map",
-      scrollMac: "Use âŒ˜ + scroll to zoom the map"
+      scrollMac: "Use ⌘ + scroll to zoom the map"
      },
      ko: {
-      touch: "ì§€ë„ë¥¼ ì›€ì§ì´ë ¤ë©´ ë‘ ì†ê°€ë½ì„ ì‚¬ìš©í•˜ì„¸ìš”.",
-      scroll: "ì§€ë„ë¥¼ í™•ëŒ€/ì¶•ì†Œí•˜ë ¤ë©´ Ctrlì„ ëˆ„ë¥¸ ì±„ ìŠ¤í¬ë¡¤í•˜ì„¸ìš”.",
-      scrollMac: "ì§€ë„ë¥¼ í™•ëŒ€í•˜ë ¤ë©´ âŒ˜ + ìŠ¤í¬ë¡¤ ì‚¬ìš©"
+      touch: "지도를 움직이려면 두 손가락을 사용하세요.",
+      scroll: "지도를 확대/축소하려면 Ctrl을 누른 채 스크롤하세요.",
+      scrollMac: "지도를 확대하려면 ⌘ + 스크롤 사용"
      },
      lt: {
-      touch: "Perkelkite Å¾emÄ—lapÄ¯ dviem pirÅ¡tais",
-      scroll: "Slinkite nuspaudÄ™ klaviÅ¡Ä… â€žCtrlâ€œ, kad pakeistumÄ—te Å¾emÄ—lapio mastelÄ¯",
-      scrollMac: "Paspauskite klaviÅ¡Ä… âŒ˜ ir slinkite, kad priartintumÄ—te Å¾emÄ—lapÄ¯"
+      touch: "Perkelkite žemėlapį dviem pirštais",
+      scroll: "Slinkite nuspaudę klavišą „Ctrl“, kad pakeistumėte žemėlapio mastelį",
+      scrollMac: "Paspauskite klavišą ⌘ ir slinkite, kad priartintumėte žemėlapį"
      },
      lv: {
-      touch: "Lai pÄrvietotu karti, bÄ«diet to ar diviem pirkstiem",
-      scroll: "Kartes tÄlummaiÅ†ai izmantojiet ctrl + ritinÄÅ¡anu",
-      scrollMac: "Lai veiktu kartes tÄlummaiÅ†u, izmantojiet âŒ˜ + ritinÄÅ¡anu"
+      touch: "Lai pārvietotu karti, bīdiet to ar diviem pirkstiem",
+      scroll: "Kartes tālummaiņai izmantojiet ctrl + ritināšanu",
+      scrollMac: "Lai veiktu kartes tālummaiņu, izmantojiet ⌘ + ritināšanu"
      },
      ml: {
-      touch: "à´®à´¾à´ªàµà´ªàµ à´¨àµ€à´•àµà´•à´¾àµ» à´°à´£àµà´Ÿàµ à´µà´¿à´°à´²àµà´•àµ¾ à´‰à´ªà´¯àµ‹à´—à´¿à´•àµà´•àµà´•",
-      scroll: "à´•àµºà´Ÿàµà´°àµ‹àµ¾ + à´¸àµâ€Œà´•àµà´°àµ‹àµ¾ à´‰à´ªà´¯àµ‹à´—à´¿à´šàµà´šàµ â€Œà´®à´¾à´ªàµà´ªàµ â€Œà´¸àµ‚à´‚ à´šàµ†à´¯àµà´¯àµà´•",
-      scrollMac: "âŒ˜ + à´¸àµâ€Œà´•àµà´°àµ‹àµ¾ à´‰à´ªà´¯àµ‹à´—à´¿à´šàµà´šàµ â€Œà´®à´¾à´ªàµà´ªàµ â€Œà´¸àµ‚à´‚ à´šàµ†à´¯àµà´¯àµà´•"
+      touch: "മാപ്പ് നീക്കാൻ രണ്ട് വിരലുകൾ ഉപയോഗിക്കുക",
+      scroll: "കൺട്രോൾ + സ്‌ക്രോൾ ഉപയോഗിച്ച് ‌മാപ്പ് ‌സൂം ചെയ്യുക",
+      scrollMac: "⌘ + സ്‌ക്രോൾ ഉപയോഗിച്ച് ‌മാപ്പ് ‌സൂം ചെയ്യുക"
      },
      mr: {
-      touch: "à¤¨à¤•à¤¾à¤¶à¤¾ à¤¹à¤²à¤µà¤¿à¤£à¥à¤¯à¤¾à¤¸à¤¾à¤ à¥€ à¤¦à¥‹à¤¨ à¤¬à¥‹à¤Ÿà¥‡ à¤µà¤¾à¤ªà¤°à¤¾",
-      scroll: "à¤¨à¤•à¤¾à¤¶à¤¾ à¤à¥‚à¤® à¤•à¤°à¤£à¥à¤¯à¤¾à¤¸à¤¾à¤ à¥€ ctrl + scroll à¤µà¤¾à¤ªà¤°à¤¾",
-      scrollMac: "à¤¨à¤•à¤¾à¤¶à¤¾à¤µà¤° à¤à¥‚à¤® à¤•à¤°à¤£à¥à¤¯à¤¾à¤¸à¤¾à¤ à¥€ âŒ˜ + à¤¸à¥à¤•à¥à¤°à¥‹à¤² à¤µà¤¾à¤ªà¤°à¤¾"
+      touch: "नकाशा हलविण्यासाठी दोन बोटे वापरा",
+      scroll: "नकाशा झूम करण्यासाठी ctrl + scroll वापरा",
+      scrollMac: "नकाशावर झूम करण्यासाठी ⌘ + स्क्रोल वापरा"
      },
      nl: {
       touch: "Gebruik twee vingers om de kaart te verplaatsen",
       scroll: "Gebruik Ctrl + scrollen om in- en uit te zoomen op de kaart",
-      scrollMac: "Gebruik âŒ˜ + scrollen om in en uit te zoomen op de kaart"
+      scrollMac: "Gebruik ⌘ + scrollen om in en uit te zoomen op de kaart"
      },
      no: {
-      touch: "Bruk to fingre for Ã¥ flytte kartet",
-      scroll: "Hold ctrl-tasten inne og rull for Ã¥ zoome pÃ¥ kartet",
-      scrollMac: "Hold inne âŒ˜-tasten og rull for Ã¥ zoome pÃ¥ kartet"
+      touch: "Bruk to fingre for å flytte kartet",
+      scroll: "Hold ctrl-tasten inne og rull for å zoome på kartet",
+      scrollMac: "Hold inne ⌘-tasten og rull for å zoome på kartet"
      },
      pl: {
-      touch: "PrzesuÅ„ mapÄ™ dwoma palcami",
-      scroll: "NaciÅ›nij CTRL i przewiÅ„, by przybliÅ¼yÄ‡ mapÄ™",
-      scrollMac: "NaciÅ›nij âŒ˜ i przewiÅ„, by przybliÅ¼yÄ‡ mapÄ™"
+      touch: "Przesuń mapę dwoma palcami",
+      scroll: "Naciśnij CTRL i przewiń, by przybliżyć mapę",
+      scrollMac: "Naciśnij ⌘ i przewiń, by przybliżyć mapę"
      },
      pt: {
       touch: "Use dois dedos para mover o mapa",
       scroll: "Pressione Ctrl e role a tela simultaneamente para aplicar zoom no mapa",
-      scrollMac: "Use âŒ˜ e role a tela simultaneamente para aplicar zoom no mapa"
+      scrollMac: "Use ⌘ e role a tela simultaneamente para aplicar zoom no mapa"
      },
      "pt-BR": {
       touch: "Use dois dedos para mover o mapa",
       scroll: "Pressione Ctrl e role a tela simultaneamente para aplicar zoom no mapa",
-      scrollMac: "Use âŒ˜ e role a tela simultaneamente para aplicar zoom no mapa"
+      scrollMac: "Use ⌘ e role a tela simultaneamente para aplicar zoom no mapa"
      },
      "pt-PT": {
       touch: "Utilize dois dedos para mover o mapa",
       scroll: "Utilizar ctrl + deslocar para aumentar/diminuir zoom do mapa",
-      scrollMac: "Utilize âŒ˜ + deslocar para aumentar/diminuir o zoom do mapa"
+      scrollMac: "Utilize ⌘ + deslocar para aumentar/diminuir o zoom do mapa"
      },
      ro: {
-      touch: "FolosiÈ›i douÄƒ degete pentru a deplasa harta",
-      scroll: "ApÄƒsaÈ›i tasta ctrl È™i derulaÈ›i simultan pentru a mÄƒri harta",
-      scrollMac: "FolosiÈ›i âŒ˜ È™i derulaÈ›i pentru a mÄƒri/micÈ™ora harta"
+      touch: "Folosiți două degete pentru a deplasa harta",
+      scroll: "Apăsați tasta ctrl și derulați simultan pentru a mări harta",
+      scrollMac: "Folosiți ⌘ și derulați pentru a mări/micșora harta"
      },
      ru: {
-      touch: "Ð§Ñ‚Ð¾Ð±Ñ‹ Ð¿ÐµÑ€ÐµÐ¼ÐµÑÑ‚Ð¸Ñ‚ÑŒ ÐºÐ°Ñ€Ñ‚Ñƒ, Ð¿Ñ€Ð¾Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾ Ð½ÐµÐ¹ Ð´Ð²ÑƒÐ¼Ñ Ð¿Ð°Ð»ÑŒÑ†Ð°Ð¼Ð¸",
-      scroll: "Ð§Ñ‚Ð¾Ð±Ñ‹ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð¼Ð°ÑÑˆÑ‚Ð°Ð±, Ð¿Ñ€Ð¾ÐºÑ€ÑƒÑ‡Ð¸Ð²Ð°Ð¹Ñ‚Ðµ ÐºÐ°Ñ€Ñ‚Ñƒ, ÑƒÐ´ÐµÑ€Ð¶Ð¸Ð²Ð°Ñ ÐºÐ»Ð°Ð²Ð¸ÑˆÑƒ Ctrl.",
-      scrollMac: "Ð§Ñ‚Ð¾Ð±Ñ‹ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð¼Ð°ÑÑˆÑ‚Ð°Ð±, Ð½Ð°Ð¶Ð¼Ð¸Ñ‚Ðµ âŒ˜ + Ð¿Ñ€Ð¾ÐºÑ€ÑƒÑ‚ÐºÐ°"
+      touch: "Чтобы переместить карту, проведите по ней двумя пальцами",
+      scroll: "Чтобы изменить масштаб, прокручивайте карту, удерживая клавишу Ctrl.",
+      scrollMac: "Чтобы изменить масштаб, нажмите ⌘ + прокрутка"
      },
      sk: {
-      touch: "Mapu mÃ´Å¾ete posunÃºÅ¥ dvoma prstami",
-      scroll: "Ak chcete priblÃ­Å¾iÅ¥ mapu, stlaÄte klÃ¡ves ctrl a posÃºvajte",
-      scrollMac: "Ak chcete priblÃ­Å¾iÅ¥ mapu, stlaÄte klÃ¡ves âŒ˜ a posÃºvajte kolieskom myÅ¡i"
+      touch: "Mapu môžete posunúť dvoma prstami",
+      scroll: "Ak chcete priblížiť mapu, stlačte kláves ctrl a posúvajte",
+      scrollMac: "Ak chcete priblížiť mapu, stlačte kláves ⌘ a posúvajte kolieskom myši"
      },
      sl: {
       touch: "Premaknite zemljevid z dvema prstoma",
-      scroll: "Zemljevid poveÄate tako, da drÅ¾ite tipko Ctrl in vrtite kolesce na miÅ¡ki",
-      scrollMac: "Uporabite âŒ˜ + funkcijo pomika, da poveÄate ali pomanjÅ¡ate zemljevid"
+      scroll: "Zemljevid povečate tako, da držite tipko Ctrl in vrtite kolesce na miški",
+      scrollMac: "Uporabite ⌘ + funkcijo pomika, da povečate ali pomanjšate zemljevid"
      },
      sr: {
-      touch: "ÐœÐ°Ð¿Ñƒ Ð¿Ð¾Ð¼ÐµÑ€Ð°Ñ˜Ñ‚Ðµ Ð¿Ð¾Ð¼Ð¾Ñ›Ñƒ Ð´Ð²Ð° Ð¿Ñ€ÑÑ‚Ð°",
-      scroll: "ÐŸÑ€Ð¸Ñ‚Ð¸ÑÐ½Ð¸Ñ‚Ðµ ctrl Ñ‚Ð°ÑÑ‚ÐµÑ€ Ð´Ð¾Ðº Ð¿Ð¾Ð¼ÐµÑ€Ð°Ñ‚Ðµ Ð´Ð° Ð±Ð¸ÑÑ‚Ðµ Ð·ÑƒÐ¼Ð¸Ñ€Ð°Ð»Ð¸ Ð¼Ð°Ð¿Ñƒ",
-      scrollMac: "ÐŸÑ€Ð¸Ñ‚Ð¸ÑÐ½Ð¸Ñ‚Ðµ Ñ‚Ð°ÑÑ‚ÐµÑ€ âŒ˜ Ð´Ð¾Ðº Ð¿Ð¾Ð¼ÐµÑ€Ð°Ñ‚Ðµ Ð´Ð° Ð±Ð¸ÑÑ‚Ðµ Ð·ÑƒÐ¼Ð¸Ñ€Ð°Ð»Ð¸ Ð¼Ð°Ð¿Ñƒ"
+      touch: "Мапу померајте помоћу два прста",
+      scroll: "Притисните ctrl тастер док померате да бисте зумирали мапу",
+      scrollMac: "Притисните тастер ⌘ док померате да бисте зумирали мапу"
      },
      sv: {
-      touch: "AnvÃ¤nd tvÃ¥ fingrar fÃ¶r att flytta kartan",
-      scroll: "AnvÃ¤nd ctrl + rulla fÃ¶r att zooma kartan",
-      scrollMac: "AnvÃ¤nd âŒ˜ + rulla fÃ¶r att zooma pÃ¥ kartan"
+      touch: "Använd två fingrar för att flytta kartan",
+      scroll: "Använd ctrl + rulla för att zooma kartan",
+      scrollMac: "Använd ⌘ + rulla för att zooma på kartan"
      },
      ta: {
-      touch: "à®®à¯‡à®ªà¯à®ªà¯ˆ à®¨à®•à®°à¯à®¤à¯à®¤ à®‡à®°à®£à¯à®Ÿà¯ à®µà®¿à®°à®²à¯à®•à®³à¯ˆà®ªà¯ à®ªà®¯à®©à¯à®ªà®Ÿà¯à®¤à¯à®¤à®µà¯à®®à¯",
-      scroll: "à®®à¯‡à®ªà¯à®ªà¯ˆ à®ªà¯†à®°à®¿à®¤à®¾à®•à¯à®•à®¿/à®šà®¿à®±à®¿à®¤à®¾à®•à¯à®•à®¿à®ªà¯ à®ªà®¾à®°à¯à®•à¯à®•, ctrl à®ªà®Ÿà¯à®Ÿà®©à¯ˆà®ªà¯ à®ªà®¿à®Ÿà®¿à®¤à¯à®¤à®ªà®Ÿà®¿, à®®à¯‡à®²à¯‡/à®•à¯€à®´à¯‡ à®¸à¯à®•à¯à®°à®¾à®²à¯ à®šà¯†à®¯à¯à®¯à®µà¯à®®à¯",
-      scrollMac: "à®®à¯‡à®ªà¯à®ªà¯ˆ à®ªà¯†à®°à®¿à®¤à®¾à®•à¯à®•à®¿/à®šà®¿à®±à®¿à®¤à®¾à®•à¯à®•à®¿à®ªà¯ à®ªà®¾à®°à¯à®•à¯à®•, âŒ˜ à®ªà®Ÿà¯à®Ÿà®©à¯ˆà®ªà¯ à®ªà®¿à®Ÿà®¿à®¤à¯à®¤à®ªà®Ÿà®¿, à®®à¯‡à®²à¯‡/à®•à¯€à®´à¯‡ à®¸à¯à®•à¯à®°à®¾à®²à¯ à®šà¯†à®¯à¯à®¯à®µà¯à®®à¯"
+      touch: "மேப்பை நகர்த்த இரண்டு விரல்களைப் பயன்படுத்தவும்",
+      scroll: "மேப்பை பெரிதாக்கி/சிறிதாக்கிப் பார்க்க, ctrl பட்டனைப் பிடித்தபடி, மேலே/கீழே ஸ்க்ரால் செய்யவும்",
+      scrollMac: "மேப்பை பெரிதாக்கி/சிறிதாக்கிப் பார்க்க, ⌘ பட்டனைப் பிடித்தபடி, மேலே/கீழே ஸ்க்ரால் செய்யவும்"
      },
      te: {
-      touch: "à°®à±à°¯à°¾à°ªà±â€Œà°¨à°¿ à°¤à°°à°²à°¿à°‚à°šà°¡à°‚ à°•à±‹à°¸à°‚ à°°à±†à°‚à°¡à± à°µà±‡à°³à±à°²à°¨à± à°‰à°ªà°¯à±‹à°—à°¿à°‚à°šà°‚à°¡à°¿",
-      scroll: "à°®à±à°¯à°¾à°ªà±â€Œà°¨à°¿ à°œà±‚à°®à± à°šà±‡à°¯à°¡à°¾à°¨à°¿à°•à°¿ ctrl à°¬à°Ÿà°¨à±â€Œà°¨à± à°¨à±Šà°•à±à°•à°¿ à°‰à°‚à°šà°¿, à°¸à±à°•à±à°°à±‹à°²à± à°šà±‡à°¯à°‚à°¡à°¿",
-      scrollMac: "à°®à±à°¯à°¾à°ªà± à°œà±‚à°®à± à°šà±‡à°¯à°¾à°²à°‚à°Ÿà±‡ âŒ˜ + à°¸à±à°•à±à°°à±‹à°²à± à°‰à°ªà°¯à±‹à°—à°¿à°‚à°šà°‚à°¡à°¿"
+      touch: "మ్యాప్‌ని తరలించడం కోసం రెండు వేళ్లను ఉపయోగించండి",
+      scroll: "మ్యాప్‌ని జూమ్ చేయడానికి ctrl బటన్‌ను నొక్కి ఉంచి, స్క్రోల్ చేయండి",
+      scrollMac: "మ్యాప్ జూమ్ చేయాలంటే ⌘ + స్క్రోల్ ఉపయోగించండి"
      },
      th: {
-      touch: "à¹ƒà¸Šà¹‰ 2 à¸™à¸´à¹‰à¸§à¹€à¸žà¸·à¹ˆà¸­à¹€à¸¥à¸·à¹ˆà¸­à¸™à¹à¸œà¸™à¸—à¸µà¹ˆ",
-      scroll: "à¸à¸” Ctrl à¸„à¹‰à¸²à¸‡à¹„à¸§à¹‰ à¹à¸¥à¹‰à¸§à¹€à¸¥à¸·à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²à¸ˆà¸­à¹€à¸žà¸·à¹ˆà¸­à¸‹à¸¹à¸¡à¹à¸œà¸™à¸—à¸µà¹ˆ",
-      scrollMac: "à¸à¸” âŒ˜ à¹à¸¥à¹‰à¸§à¹€à¸¥à¸·à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²à¸ˆà¸­à¹€à¸žà¸·à¹ˆà¸­à¸‹à¸¹à¸¡à¹à¸œà¸™à¸—à¸µà¹ˆ"
+      touch: "ใช้ 2 นิ้วเพื่อเลื่อนแผนที่",
+      scroll: "กด Ctrl ค้างไว้ แล้วเลื่อนหน้าจอเพื่อซูมแผนที่",
+      scrollMac: "กด ⌘ แล้วเลื่อนหน้าจอเพื่อซูมแผนที่"
      },
      tl: {
       touch: "Gumamit ng dalawang daliri upang iusog ang mapa",
       scroll: "Gamitin ang ctrl + scroll upang i-zoom ang mapa",
-      scrollMac: "Gamitin ang âŒ˜ + scroll upang i-zoom ang mapa"
+      scrollMac: "Gamitin ang ⌘ + scroll upang i-zoom ang mapa"
      },
      tr: {
-      touch: "Haritada gezinmek iÃ§in iki parmaÄŸÄ±nÄ±zÄ± kullanÄ±n",
-      scroll: "HaritayÄ± yakÄ±nlaÅŸtÄ±rmak iÃ§in ctrl + kaydÄ±rma kombinasyonunu kullanÄ±n",
-      scrollMac: "HaritayÄ± yakÄ±nlaÅŸtÄ±rmak iÃ§in âŒ˜ tuÅŸuna basÄ±p ekranÄ± kaydÄ±rÄ±n"
+      touch: "Haritada gezinmek için iki parmağınızı kullanın",
+      scroll: "Haritayı yakınlaştırmak için ctrl + kaydırma kombinasyonunu kullanın",
+      scrollMac: "Haritayı yakınlaştırmak için ⌘ tuşuna basıp ekranı kaydırın"
      },
      uk: {
-      touch: "ÐŸÐµÑ€ÐµÐ¼Ñ–Ñ‰ÑƒÐ¹Ñ‚Ðµ ÐºÐ°Ñ€Ñ‚Ñƒ Ð´Ð²Ð¾Ð¼Ð° Ð¿Ð°Ð»ÑŒÑ†ÑÐ¼Ð¸",
-      scroll: "Ð©Ð¾Ð± Ð·Ð¼Ñ–Ð½ÑŽÐ²Ð°Ñ‚Ð¸ Ð¼Ð°ÑÑˆÑ‚Ð°Ð± ÐºÐ°Ñ€Ñ‚Ð¸, Ð¿Ñ€Ð¾ÐºÑ€ÑƒÑ‡ÑƒÐ¹Ñ‚Ðµ ÐºÐ¾Ð»Ñ–Ñ‰Ð°Ñ‚ÐºÐ¾ Ð¼Ð¸ÑˆÑ–, ÑƒÑ‚Ñ€Ð¸Ð¼ÑƒÑŽÑ‡Ð¸ ÐºÐ»Ð°Ð²Ñ–ÑˆÑƒ Ctrl",
-      scrollMac: "Ð©Ð¾Ð± Ð·Ð¼Ñ–Ð½Ð¸Ñ‚Ð¸ Ð¼Ð°ÑÑˆÑ‚Ð°Ð± ÐºÐ°Ñ€Ñ‚Ð¸, Ð²Ð¸ÐºÐ¾Ñ€Ð¸ÑÑ‚Ð¾Ð²ÑƒÐ¹Ñ‚Ðµ âŒ˜ + Ð¿Ñ€Ð¾ÐºÑ€ÑƒÑ‡ÑƒÐ²Ð°Ð½Ð½Ñ"
+      touch: "Переміщуйте карту двома пальцями",
+      scroll: "Щоб змінювати масштаб карти, прокручуйте коліщатко миші, утримуючи клавішу Ctrl",
+      scrollMac: "Щоб змінити масштаб карти, використовуйте ⌘ + прокручування"
      },
      vi: {
-      touch: "Sá»­ dá»¥ng hai ngÃ³n tay Ä‘á»ƒ di chuyá»ƒn báº£n Ä‘á»“",
-      scroll: "Sá»­ dá»¥ng ctrl + cuá»™n Ä‘á»ƒ thu phÃ³ng báº£n Ä‘á»“",
-      scrollMac: "Sá»­ dá»¥ng âŒ˜ + cuá»™n Ä‘á»ƒ thu phÃ³ng báº£n Ä‘á»“"
+      touch: "Sử dụng hai ngón tay để di chuyển bản đồ",
+      scroll: "Sử dụng ctrl + cuộn để thu phóng bản đồ",
+      scrollMac: "Sử dụng ⌘ + cuộn để thu phóng bản đồ"
      },
      "zh-CN": {
-      touch: "ä½¿ç”¨åŒæŒ‡ç§»åŠ¨åœ°å›¾",
-      scroll: "æŒ‰ä½ Ctrl å¹¶æ»šåŠ¨é¼ æ ‡æ»šè½®æ‰å¯ç¼©æ”¾åœ°å›¾",
-      scrollMac: "æŒ‰ä½ âŒ˜ å¹¶æ»šåŠ¨é¼ æ ‡æ»šè½®æ‰å¯ç¼©æ”¾åœ°å›¾"
+      touch: "使用双指移动地图",
+      scroll: "按住 Ctrl 并滚动鼠标滚轮才可缩放地图",
+      scrollMac: "按住 ⌘ 并滚动鼠标滚轮才可缩放地图"
      },
      "zh-TW": {
-      touch: "åŒæ™‚ä»¥å…©æŒ‡ç§»å‹•åœ°åœ–",
-      scroll: "æŒ‰ä½ ctrl éµåŠ ä¸Šæ²å‹•æ»‘é¼ å¯ä»¥ç¸®æ”¾åœ°åœ–",
-      scrollMac: "æŒ‰ âŒ˜ åŠ ä¸Šæ»¾å‹•æ²è»¸å¯ä»¥ç¸®æ”¾åœ°åœ–"
+      touch: "同時以兩指移動地圖",
+      scroll: "按住 ctrl 鍵加上捲動滑鼠可以縮放地圖",
+      scrollMac: "按 ⌘ 加上滾動捲軸可以縮放地圖"
      }
     },
     i = !1,
@@ -1129,7 +1129,7 @@
    onAdd: function(t) {
     var e = L.DomUtil.create("div", "leaflet-control-attribution leaflet-edit-osm"),
      i = L.DomUtil.create("a", "", e);
-    return i.href = "#", i.innerHTML = "âœŽ Edit", i.title = "Edit in OpenStreetMap", L.DomEvent.on(i, "click", L.DomEvent.stopPropagation).on(i, "mousedown", L.DomEvent.stopPropagation).on(i, "dblclick", L.DomEvent.stopPropagation).on(i, "click", L.DomEvent.preventDefault).on(i, "click", L.bind(this._edit, this), this), e
+    return i.href = "#", i.innerHTML = "✎ Edit", i.title = "Edit in OpenStreetMap", L.DomEvent.on(i, "click", L.DomEvent.stopPropagation).on(i, "mousedown", L.DomEvent.stopPropagation).on(i, "dblclick", L.DomEvent.stopPropagation).on(i, "click", L.DomEvent.preventDefault).on(i, "click", L.bind(this._edit, this), this), e
    }
   }), L.control.editInOSM = function(t) {
    return new L.Control.EditInOSM(t)
@@ -2921,7 +2921,3 @@
  }()
 }));
 //# sourceMappingURL=leaflet-ui.js.map
-js
-Kamel Chehboun <chibrams@gmail.com>
-Mon 2020-06-01 12:04 PM
-CAUTION: This email originated from an external sender. Do not click links, open attachments or respond unless you recognize the sender and verify the content is safe. Please report any concerns to the ITS Service Desk.
