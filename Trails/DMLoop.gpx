@@ -4,7 +4,7 @@
 		<time>2020-05-31T12:42:55-04:00</time>
 		<bounds minlat="46.08686330773493" minlon="-77.47262859927082" maxlat="46.08774762497108" maxlon="-77.471706298895711"/>
 	</metadata>
-	<rte><name>DM Junction</name><number>11</number>
+	<rte><name>DM Junction</name><number>5</number>
 		<rtept lat="46.08774762497108" lon="-77.47262859927082">
 			<ele>134.97900000000664</ele>
 		</rtept>
