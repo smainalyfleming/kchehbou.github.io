@@ -1008,219 +1008,7 @@
       i || this._disableInteractions()
      }
     });
-   L.Map.mergeOptions({
-    gestureHandlingOptions: o
-   }), L.Map.addInitHook("addHandler", "gestureHandling", n), t.GestureHandling = n, t.default = n, Object.defineProperty(t, "__esModule", {
-    value: !0
-   })
-  })), L.Control.EditInOSM = L.Control.extend({
-   options: {
-    position: "bottomright",
-    editor: !1
-   },
-   _edit: function() {
-    var t = this._map.getCenter(),
-     e = this._map.getZoom(),
-     i = this.options.editor ? "&editor=" + this.options.editor : "";
-    window.open("http://www.openstreetmap.org/edit?zoom=" + e + i + "&lat=" + t.lat + "&lon=" + t.lng)
-   },
-   onAdd: function(t) {
-    var e = L.DomUtil.create("div", "leaflet-control-attribution leaflet-edit-osm"),
-     i = L.DomUtil.create("a", "", e);
-    return i.href = "#", i.innerHTML = "✎ Edit", i.title = "Edit in OpenStreetMap", L.DomEvent.on(i, "click", L.DomEvent.stopPropagation).on(i, "mousedown", L.DomEvent.stopPropagation).on(i, "dblclick", L.DomEvent.stopPropagation).on(i, "click", L.DomEvent.preventDefault).on(i, "click", L.bind(this._edit, this), this), e
-   }
-  }), L.control.editInOSM = function(t) {
-   return new L.Control.EditInOSM(t)
-  },
-  /**
-   * leaflet-control-layers-inline
-   *
-   * @author    Raruto
-   * @license   GPL-3.0+
-   * @link https://github.com/Raruto/leaflet-control-layers-inline
-   * @desc Leaflet plugin that allows to display inline layers control
-   */
-  t = L.Control.Layers.prototype, e = t.initialize, o = t.onAdd, t.options.inline = !1, L.Control.Layers.include({
-   initialize: function(t, i, o) {
-    o.inline && (o.collapsed = !1), e.call(this, t, i, o)
-   },
-   onAdd: function(t) {
-    return o.call(this, t), this.options.inline && (this.options.collapsed = !1, L.DomUtil.addClass(this._container, "leaflet-control-layers-inline")), this.options.className && L.DomUtil.addClass(this._container, this.options.className), this._container
-   }
-  }),
-  function(t, e) {
-   "function" == typeof define && define.amd ? define(["leaflet"], t) : "object" == typeof exports && (module.exports = t(require("leaflet"))), void 0 !== e && e.L && (e.L.Control.MiniMap = t(L), e.L.control.minimap = function(t, i) {
-    return new e.L.Control.MiniMap(t, i)
-   })
-  }((function(t) {
-   var e = t.Control.extend({
-    includes: t.Evented ? t.Evented.prototype : t.Mixin.Events,
-    options: {
-     position: "bottomright",
-     toggleDisplay: !1,
-     zoomLevelOffset: -5,
-     zoomLevelFixed: !1,
-     centerFixed: !1,
-     zoomAnimation: !1,
-     autoToggleDisplay: !1,
-     minimized: !1,
-     width: 150,
-     height: 150,
-     collapsedWidth: 19,
-     collapsedHeight: 19,
-     aimingRectOptions: {
-      color: "#ff7800",
-      weight: 1,
-      clickable: !1
-     },
-     shadowRectOptions: {
-      color: "#000000",
-      weight: 1,
-      clickable: !1,
-      opacity: 0,
-      fillOpacity: 0
-     },
-     strings: {
-      hideText: "Hide MiniMap",
-      showText: "Show MiniMap"
-     },
-     mapOptions: {}
-    },
-    initialize: function(e, i) {
-     t.Util.setOptions(this, i), this.options.aimingRectOptions.clickable = !1, this.options.shadowRectOptions.clickable = !1, this._layer = e
-    },
-    onAdd: function(e) {
-     this._mainMap = e, this._container = t.DomUtil.create("div", "leaflet-control-minimap"), this._container.style.width = this.options.width + "px", this._container.style.height = this.options.height + "px", t.DomEvent.disableClickPropagation(this._container), t.DomEvent.on(this._container, "mousewheel", t.DomEvent.stopPropagation);
-     var i = {
-      attributionControl: !1,
-      dragging: !this.options.centerFixed,
-      zoomControl: !1,
-      zoomAnimation: this.options.zoomAnimation,
-      autoToggleDisplay: this.options.autoToggleDisplay,
-      touchZoom: this.options.centerFixed ? "center" : !this._isZoomLevelFixed(),
-      scrollWheelZoom: this.options.centerFixed ? "center" : !this._isZoomLevelFixed(),
-      doubleClickZoom: this.options.centerFixed ? "center" : !this._isZoomLevelFixed(),
-      boxZoom: !this._isZoomLevelFixed(),
-      crs: e.options.crs
-     };
-     return i = t.Util.extend(this.options.mapOptions, i), this._miniMap = new t.Map(this._container, i), this._miniMap.addLayer(this._layer), this._mainMapMoving = !1, this._miniMapMoving = !1, this._userToggledDisplay = !1, this._minimized = !1, this.options.toggleDisplay && this._addToggleButton(), this._miniMap.whenReady(t.Util.bind((function() {
-      this._aimingRect = t.rectangle(this._mainMap.getBounds(), this.options.aimingRectOptions).addTo(this._miniMap), this._shadowRect = t.rectangle(this._mainMap.getBounds(), this.options.shadowRectOptions).addTo(this._miniMap), this._mainMap.on("moveend", this._onMainMapMoved, this), this._mainMap.on("move", this._onMainMapMoving, this), this._miniMap.on("movestart", this._onMiniMapMoveStarted, this), this._miniMap.on("move", this._onMiniMapMoving, this), this._miniMap.on("moveend", this._onMiniMapMoved, this)
-     }), this)), this._container
-    },
-    addTo: function(e) {
-     t.Control.prototype.addTo.call(this, e);
-     var i = this.options.centerFixed || this._mainMap.getCenter();
-     return this._miniMap.setView(i, this._decideZoom(!0)), this._setDisplay(this.options.minimized), this
-    },
-    onRemove: function(t) {
-     this._mainMap.off("moveend", this._onMainMapMoved, this), this._mainMap.off("move", this._onMainMapMoving, this), this._miniMap.off("moveend", this._onMiniMapMoved, this), this._miniMap.removeLayer(this._layer)
-    },
-    changeLayer: function(t) {
-     this._miniMap.removeLayer(this._layer), this._layer = t, this._miniMap.addLayer(this._layer)
-    },
-    _addToggleButton: function() {
-     this._toggleDisplayButton = this.options.toggleDisplay ? this._createButton("", this._toggleButtonInitialTitleText(), "leaflet-control-minimap-toggle-display leaflet-control-minimap-toggle-display-" + this.options.position, this._container, this._toggleDisplayButtonClicked, this) : void 0, this._toggleDisplayButton.style.width = this.options.collapsedWidth + "px", this._toggleDisplayButton.style.height = this.options.collapsedHeight + "px"
-    },
-    _toggleButtonInitialTitleText: function() {
-     return this.options.minimized ? this.options.strings.showText : this.options.strings.hideText
-    },
-    _createButton: function(e, i, o, n, s, a) {
-     var r = t.DomUtil.create("a", o, n);
-     r.innerHTML = e, r.href = "#", r.title = i;
-     var l = t.DomEvent.stopPropagation;
-     return t.DomEvent.on(r, "click", l).on(r, "mousedown", l).on(r, "dblclick", l).on(r, "click", t.DomEvent.preventDefault).on(r, "click", s, a), r
-    },
-    _toggleDisplayButtonClicked: function() {
-     this._userToggledDisplay = !0, this._minimized ? this._restore() : this._minimize()
-    },
-    _setDisplay: function(t) {
-     t !== this._minimized && (this._minimized ? this._restore() : this._minimize())
-    },
-    _minimize: function() {
-     this.options.toggleDisplay ? (this._container.style.width = this.options.collapsedWidth + "px", this._container.style.height = this.options.collapsedHeight + "px", this._toggleDisplayButton.className += " minimized-" + this.options.position, this._toggleDisplayButton.title = this.options.strings.showText) : this._container.style.display = "none", this._minimized = !0, this._onToggle()
-    },
-    _restore: function() {
-     this.options.toggleDisplay ? (this._container.style.width = this.options.width + "px", this._container.style.height = this.options.height + "px", this._toggleDisplayButton.className = this._toggleDisplayButton.className.replace("minimized-" + this.options.position, ""), this._toggleDisplayButton.title = this.options.strings.hideText) : this._container.style.display = "block", this._minimized = !1, this._onToggle()
-    },
-    _onMainMapMoved: function(t) {
-     if (this._miniMapMoving) this._miniMapMoving = !1;
-     else {
-      var e = this.options.centerFixed || this._mainMap.getCenter();
-      this._mainMapMoving = !0, this._miniMap.setView(e, this._decideZoom(!0)), this._setDisplay(this._decideMinimized())
-     }
-     this._aimingRect.setBounds(this._mainMap.getBounds())
-    },
-    _onMainMapMoving: function(t) {
-     this._aimingRect.setBounds(this._mainMap.getBounds())
-    },
-    _onMiniMapMoveStarted: function(t) {
-     if (!this.options.centerFixed) {
-      var e = this._aimingRect.getBounds(),
-       i = this._miniMap.latLngToContainerPoint(e.getSouthWest()),
-       o = this._miniMap.latLngToContainerPoint(e.getNorthEast());
-      this._lastAimingRectPosition = {
-       sw: i,
-       ne: o
-      }
-     }
-    },
-    _onMiniMapMoving: function(e) {
-     this.options.centerFixed || !this._mainMapMoving && this._lastAimingRectPosition && (this._shadowRect.setBounds(new t.LatLngBounds(this._miniMap.containerPointToLatLng(this._lastAimingRectPosition.sw), this._miniMap.containerPointToLatLng(this._lastAimingRectPosition.ne))), this._shadowRect.setStyle({
-      opacity: 1,
-      fillOpacity: .3
-     }))
-    },
-    _onMiniMapMoved: function(t) {
-     this._mainMapMoving ? this._mainMapMoving = !1 : (this._miniMapMoving = !0, this._mainMap.setView(this._miniMap.getCenter(), this._decideZoom(!1)), this._shadowRect.setStyle({
-      opacity: 0,
-      fillOpacity: 0
-     }))
-    },
-    _isZoomLevelFixed: function() {
-     var t = this.options.zoomLevelFixed;
-     return this._isDefined(t) && this._isInteger(t)
-    },
-    _decideZoom: function(t) {
-     if (this._isZoomLevelFixed()) return t ? this.options.zoomLevelFixed : this._mainMap.getZoom();
-     if (t) return this._mainMap.getZoom() + this.options.zoomLevelOffset;
-     var e, i = this._miniMap.getZoom() - this._mainMap.getZoom(),
-      o = this._miniMap.getZoom() - this.options.zoomLevelOffset;
-     return i > this.options.zoomLevelOffset && this._mainMap.getZoom() < this._miniMap.getMinZoom() - this.options.zoomLevelOffset ? this._miniMap.getZoom() > this._lastMiniMapZoom ? (e = this._mainMap.getZoom() + 1, this._miniMap.setZoom(this._miniMap.getZoom() - 1)) : e = this._mainMap.getZoom() : e = o, this._lastMiniMapZoom = this._miniMap.getZoom(), e
-    },
-    _decideMinimized: function() {
-     return this._userToggledDisplay ? this._minimized : this.options.autoToggleDisplay ? !!this._mainMap.getBounds().contains(this._miniMap.getBounds()) : this._minimized
-    },
-    _isInteger: function(t) {
-     return "number" == typeof t
-    },
-    _isDefined: function(t) {
-     return void 0 !== t
-    },
-    _onToggle: function() {
-     t.Util.requestAnimFrame((function() {
-      t.DomEvent.on(this._container, "transitionend", this._fireToggleEvents, this), t.Browser.any3d || t.Util.requestAnimFrame(this._fireToggleEvents, this)
-     }), this)
-    },
-    _fireToggleEvents: function() {
-     t.DomEvent.off(this._container, "transitionend", this._fireToggleEvents, this);
-     var e = {
-      minimized: this._minimized
-     };
-     this.fire(this._minimized ? "minimize" : "restore", e), this.fire("toggle", e)
-    }
-   });
-   return t.Map.mergeOptions({
-    miniMapControl: !1
-   }), t.Map.addInitHook((function() {
-    this.options.miniMapControl && (this.miniMapControl = (new e).addTo(this))
-   })), e
-  }), window),
-  function() {
-   var t = window.console || {
-    error: function() {},
-    warn: function() {}
-   };
-
+   
    function e(e) {
     e.Control.Loading = e.Control.extend({
      options: {
@@ -2567,18 +2355,7 @@
     inline: !0,
     position: "topleft"
    },
-   minimapControl: {
-    position: "bottomleft",
-    toggleDisplay: !1,
-    toggleMapTypes: !0,
-    width: 75,
-    height: 75,
-    aimingRectOptions: {
-     color: "#000000",
-     weight: 1,
-     opacity: 0,
-     fillOpacity: 0
-    },
+
     shadowRectOptions: {
      color: "#000000",
      weight: 1,
@@ -2590,7 +2367,6 @@
      gestureHandling: !1,
      searchControl: !1,
      loadingControl: !1,
-     _isMiniMap: !0
     }
    },
    editInOSMControl: {
@@ -2626,7 +2402,6 @@
    },
    disableDefaultUI: !1,
    plugins: [],
-   _isMiniMap: !1
   };
 
   function e() {
