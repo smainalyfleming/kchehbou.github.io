@@ -2868,7 +2868,6 @@
   }), L.Map.addInitHook((function() {
    e.call(this), this.options._isMiniMap || this.options.disableDefaultUI || (i.call(this), o.call(this))
   }));
-  var l = L.Control.MiniMap.prototype.onAdd;
 
   function h(t, e) {
    return t.some(t => e.includes(t))
@@ -2889,35 +2888,5 @@
     });
    return p(t, ...e)
   }
-  L.Control.MiniMap.include({
-   onAdd: function(t) {
-    var e = l.call(this, t);
-    return this._miniMap && (this._miniMap.doubleClickZoom.disable(), this._miniMap.touchZoom.disable(), this._miniMap.scrollWheelZoom.disable()), this.options.toggleMapTypes && (L.DomEvent.on(t, "baselayerchange", this._handleMainMapTypeChange, this), L.DomEvent.on(this._container, "click", this._handleMiniMapTypeToggle, this)), e
-   },
-   _handleMainMapTypeChange: function(t) {
-    if (!this._handligMiniMapTypeToggle && t && t.layer) {
-     var e, i, o = this._mainMap,
-      n = this._layer.mapTypeId,
-      s = t.layer.mapTypeId;
-     if (o.options.mapTypeIds.length > 0 && h(o.options.mapTypeIds, s)) s != n && (this._lastMapTypeId = s), "satellite" == s && "satellite" == n ? e = this._lastMapTypeId : "satellite" != s && "satellite" != n && (e = "satellite"), (i = o.options.mapTypes[e]) && ((i = new L.TileLayer(i.url, i.options)).mapTypeId = e, this._lastMapTypeId = n, this.changeLayer(i))
-    }
-   },
-   _handleMiniMapTypeToggle: function() {
-    if (this._handligMiniMapTypeToggle = !0, this._layer && this._mainMapBaseLayers) {
-     var t, e, i = this._mainMap,
-      o = this._layer.mapTypeId;
-     for (let t in this._mainMapBaseLayers)
-      if (i.hasLayer(this._mainMapBaseLayers[t]) && o != this._mainMapBaseLayers[t].mapTypeId) {
-       this._mainMapBaseLayers[t].mapTypeId;
-       break
-      } if (i.options.mapTypeIds.length > 0 && h(i.options.mapTypeIds, o))
-      if (t = this._lastMapTypeId || i.options.mapTypeId, "satellite" != this._lastMapTypeId && "satellite" != o && (t = "satellite"), e = i.options.mapTypes[t]) {
-       (e = new L.TileLayer(e.url, e.options)).mapTypeId = t, this._lastMapTypeId = o, this.changeLayer(e);
-       for (let t in this._mainMapBaseLayers) this._mainMapBaseLayers[t].remove(), this._lastMapTypeId == this._mainMapBaseLayers[t].mapTypeId && this._mainMapBaseLayers[t].addTo(i)
-      } this._handligMiniMapTypeToggle = !1
-    }
-   }
-  })
- }()
-}));
+
 //# sourceMappingURL=leaflet-ui.js.map
