@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gpx version="1.1" creator="GDAL 2.2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
 <metadata><bounds minlat="46.086620610222980" minlon="-77.478083081613804" maxlat="46.089369244383363" maxlon="-77.472628599270692"/></metadata>                
-<trk><name>H Loop</name><number>6</number>
+<trk><name>H Loop</name><number>10</number>
   <trkseg>
     <trkpt lat="46.080224146114901" lon="-77.462716176498304">
         <ele>141.574399999997695</ele>
