@@ -2555,13 +2555,7 @@
     position: "bottomright",
     imperial: !1
    },
-   pegmanControl: {
-    position: "bottomleft",
-    theme: "leaflet-pegman-v3-small"
-   },
-   locateControl: {
-    position: "bottomleft"
-   },
+  
 
    layersControl: {
     inline: !0,
@@ -2592,6 +2586,13 @@
      loadingControl: !1,
      _isMiniMap: !0
     }
+   },
+    pegmanControl: {
+    position: "bottomleft",
+    theme: "leaflet-pegman-v3-small"
+   },
+   locateControl: {
+    position: "bottomleft"
    },
    editInOSMControl: {
     position: "bottomright"
