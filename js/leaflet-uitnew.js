@@ -1209,12 +1209,12 @@
      this.fire(this._minimized ? "minimize" : "restore", e), this.fire("toggle", e)
     }
    });
-   return t.Map.mergeOptions({
+   /*return t.Map.mergeOptions({
     miniMapControl: !1
    }), t.Map.addInitHook((function() {
     this.options.miniMapControl && (this.miniMapControl = (new e).addTo(this))
    })), e
-  }), window),
+  }), window),*/
   function() {
    var t = window.console || {
     error: function() {},
@@ -2588,11 +2588,11 @@
     }
    },
     pegmanControl: {
-    position: "bottomleft",
+    position: "bottomright",
     theme: "leaflet-pegman-v3-small"
    },
    locateControl: {
-    position: "bottomleft"
+    position: "bottomright"
    },
    editInOSMControl: {
     position: "bottomright"
