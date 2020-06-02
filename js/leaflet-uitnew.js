@@ -2556,11 +2556,11 @@
     imperial: !1
    },
    pegmanControl: {
-    position: "bottomright",
+    position: "bottomleft",
     theme: "leaflet-pegman-v3-small"
    },
    locateControl: {
-    position: "bottomright"
+    position: "bottomleft"
    },
 
    layersControl: {
