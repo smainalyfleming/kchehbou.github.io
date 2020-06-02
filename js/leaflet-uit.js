@@ -2674,9 +2674,9 @@
     inline: !0,
     position: "topleft"
    },
-  /* minimapControl: {
+  minimapControl: {
     position: "bottomleft",
-    toggleDisplay: !1,
+    toggleDisplay: !0,
     toggleMapTypes: !0,
     width: 75,
     height: 75,
@@ -2686,7 +2686,7 @@
      opacity: 0,
      fillOpacity: 0
     },
-   */
+   
     shadowRectOptions: {
      color: "#000000",
      weight: 1,
