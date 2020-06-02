@@ -188,8 +188,6 @@
 			{latlng:[46.0870430,-77.4711718],name:'Chalet'},
 			{latlng:[46.0761104,-77.4598527],name:'Chalet'}
                		];
-  //  var chalets2 = 	L.marker([46.1026419,-77.4791419], {icon: greenIcon});
-	//	var chalets3 = 	L.marker([46.0870430,-77.4711718], {icon: greenIcon});
     
 		var privprop=	L.polygon([
 			[[[ 46.0824529369 ,-77.4820173675],
@@ -208,15 +206,14 @@
 			[46.0807644,-77.4814732],
 			[46.0785496,-77.4786459],
 			[46.0792092,-77.4775613]]]
-			]);
+			],{fillcolor: 'grey',color:'grey',stroke:false,fillOpacity:0.5});
  
 		privprop.bindTooltip('Private Property',{permanent:false,direction:'auto'});
     
 		var map = L.map('map', opts.map);
 
 		var baseLayers = {};
-    
-
+   
 		var controlZoom = new L.Control.Zoom(opts.zoomControl);
 		var controlScale = L.control.scale(opts.scaleControl.options);
 		var controlLocate = L.control.locate(opts.locateControl.options);
@@ -224,7 +221,7 @@
 		var routes = L.gpxGrroup(trails, {
 			points: parkings,
 			points_options: opts.parkings.options,
-      			elevation: true,
+      	elevation: true,
 			elevation_options: {
 				theme: "purple-theme",
 				detachedView: true,
@@ -238,17 +235,33 @@
       			position: "topright",
     			},
       		});
-    		
-		var Polygons = L.gpxGrroup(chalets, {
+    
+    		map.on('eledata_added eledata_clear', function(e) {
+			var p = document.querySelector(".chart-placeholder");
+			if(p) {
+				p.style.display = e.type=='eledata_added' ? 'none' : '';
+			}
+		});
+
+		map.on('eledata_added', function(e) {
+			var q = document.querySelector.bind(document);
+			var track = e.track_info;
+
+			//controlLayer.addOverlay(e.layer, e.name);
+			q('.totlen .summaryvalue').innerHTML = track.distance.toFixed(2) + " km";
+			q('.maxele .summaryvalue').innerHTML = track.elevation_max.toFixed(2) + " m";
+			q('.minele .summaryvalue').innerHTML = track.elevation_min.toFixed(2) + " m";
+		});
+    
+		var Chalets = L.gpxGrroup(chalets, {
 			points: chalets,
 			points_options: opts.chalets.options,
 		});
- 
-		    controlZoom.addTo(map);
+        controlZoom.addTo(map);
     		routes.addTo(map);
-        Polygons.addTo(map);
+        Chalets.addTo(map);
         privprop.addTo(map);
+    
 	</script>
 </body>
-
 </html>
