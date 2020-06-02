@@ -2665,7 +2665,7 @@
     position: "bottomright"
    },
    fullscreenControl: {
-    position: "topright",
+    position: "bottomleft",
     title: "Enter Fullscreen",
     titleCancel: "Exit Fullscreen",
     forceSeparateButton: !0
@@ -2674,7 +2674,7 @@
     inline: !0,
     position: "topleft"
    },
-   minimapControl: {
+  /* minimapControl: {
     position: "bottomleft",
     toggleDisplay: !1,
     toggleMapTypes: !0,
@@ -2686,6 +2686,7 @@
      opacity: 0,
      fillOpacity: 0
     },
+   */
     shadowRectOptions: {
      color: "#000000",
      weight: 1,
