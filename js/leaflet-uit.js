@@ -326,6 +326,102 @@
    return new t.Control.Locate(e)
   }, a
  }), window),
+ function() {
+  L.Control.FullScreen = L.Control.extend({
+   options: {
+    position: "topleft",
+    title: "Full Screen",
+    titleCancel: "Exit Full Screen",
+    forceSeparateButton: !1,
+    forcePseudoFullscreen: !1,
+    fullscreenElement: !1
+   },
+   onAdd: function(t) {
+    var e, i = "leaflet-control-zoom-fullscreen",
+     o = "";
+    return e = t.zoomControl && !this.options.forceSeparateButton ? t.zoomControl._container : L.DomUtil.create("div", "leaflet-bar"), this.options.content ? o = this.options.content : i += " fullscreen-icon", this._createButton(this.options.title, i, o, e, this.toggleFullScreen, this), this._map.fullscreenControl = this, this._map.on("enterFullscreen exitFullscreen", this._toggleTitle, this), e
+   },
+   onRemove: function(e) {
+    L.DomEvent.off(this.link, "click", L.DomEvent.stopPropagation).off(this.link, "click", L.DomEvent.preventDefault).off(this.link, "click", this.toggleFullScreen, this), L.DomEvent.off(this._container, t.fullScreenEventName, L.DomEvent.stopPropagation).off(this._container, t.fullScreenEventName, L.DomEvent.preventDefault).off(this._container, t.fullScreenEventName, this._handleFullscreenChange, this), L.DomEvent.off(document, t.fullScreenEventName, L.DomEvent.stopPropagation).off(document, t.fullScreenEventName, L.DomEvent.preventDefault).off(document, t.fullScreenEventName, this._handleFullscreenChange, this)
+   },
+   _createButton: function(e, i, o, n, s, a) {
+    return this.link = L.DomUtil.create("a", i, n), this.link.href = "#", this.link.title = e, this.link.innerHTML = o, this.link.setAttribute("role", "button"), this.link.setAttribute("aria-label", e), L.DomEvent.on(this.link, "click", L.DomEvent.stopPropagation).on(this.link, "click", L.DomEvent.preventDefault).on(this.link, "click", s, a), L.DomEvent.on(n, t.fullScreenEventName, L.DomEvent.stopPropagation).on(n, t.fullScreenEventName, L.DomEvent.preventDefault).on(n, t.fullScreenEventName, this._handleFullscreenChange, a), L.DomEvent.on(document, t.fullScreenEventName, L.DomEvent.stopPropagation).on(document, t.fullScreenEventName, L.DomEvent.preventDefault).on(document, t.fullScreenEventName, this._handleFullscreenChange, a), this.link
+   },
+   toggleFullScreen: function() {
+    var e = this._map;
+    e._exitFired = !1, e._isFullscreen ? (t.supportsFullScreen && !this.options.forcePseudoFullscreen ? t.cancelFullScreen() : L.DomUtil.removeClass(this.options.fullscreenElement ? this.options.fullscreenElement : e._container, "leaflet-pseudo-fullscreen"), e.fire("exitFullscreen"), e._exitFired = !0, e._isFullscreen = !1) : (t.supportsFullScreen && !this.options.forcePseudoFullscreen ? t.requestFullScreen(this.options.fullscreenElement ? this.options.fullscreenElement : e._container) : L.DomUtil.addClass(this.options.fullscreenElement ? this.options.fullscreenElement : e._container, "leaflet-pseudo-fullscreen"), e.fire("enterFullscreen"), e._isFullscreen = !0)
+   },
+   _toggleTitle: function() {
+    this.link.title = this._map._isFullscreen ? this.options.title : this.options.titleCancel
+   },
+   _handleFullscreenChange: function() {
+    var e = this._map;
+    e.invalidateSize(), t.isFullScreen() || e._exitFired || (e.fire("exitFullscreen"), e._exitFired = !0, e._isFullscreen = !1)
+   }
+  }), L.Map.include({
+   toggleFullscreen: function() {
+    this.fullscreenControl.toggleFullScreen()
+   }
+  }), L.Map.addInitHook((function() {
+   this.options.fullscreenControl && this.addControl(L.control.fullscreen(this.options.fullscreenControlOptions))
+  })), L.control.fullscreen = function(t) {
+   return new L.Control.FullScreen(t)
+  };
+  var t = {
+    supportsFullScreen: !1,
+    isFullScreen: function() {
+     return !1
+    },
+    requestFullScreen: function() {},
+    cancelFullScreen: function() {},
+    fullScreenEventName: "",
+    prefix: ""
+   },
+   e = "webkit moz o ms khtml".split(" ");
+  if (void 0 !== document.exitFullscreen) t.supportsFullScreen = !0;
+  else {
+   for (var i = 0, o = e.length; i < o; i++)
+    if (t.prefix = e[i], void 0 !== document[t.prefix + "CancelFullScreen"]) {
+     t.supportsFullScreen = !0;
+     break
+    } void 0 !== document.msExitFullscreen && (t.prefix = "ms", t.supportsFullScreen = !0)
+  }
+  t.supportsFullScreen && ("ms" === t.prefix ? t.fullScreenEventName = "MSFullscreenChange" : t.fullScreenEventName = t.prefix + "fullscreenchange", t.isFullScreen = function() {
+   switch (this.prefix) {
+    case "":
+     return document.fullscreen;
+    case "webkit":
+     return document.webkitIsFullScreen;
+    case "ms":
+     return document.msFullscreenElement;
+    default:
+     return document[this.prefix + "FullScreen"]
+   }
+  }, t.requestFullScreen = function(t) {
+   switch (this.prefix) {
+    case "":
+     return t.requestFullscreen();
+    case "ms":
+     return t.msRequestFullscreen();
+    default:
+     return t[this.prefix + "RequestFullScreen"]()
+   }
+  }, t.cancelFullScreen = function() {
+   switch (this.prefix) {
+    case "":
+     return document.exitFullscreen();
+    case "ms":
+     return document.msExitFullscreen();
+    default:
+     return document[this.prefix + "CancelFullScreen"]()
+   }
+  }), "undefined" != typeof jQuery && (jQuery.fn.requestFullScreen = function() {
+   return this.each((function() {
+    var e = jQuery(this);
+    t.supportsFullScreen && t.requestFullScreen(e)
+   }))
+  }), window.fullScreenApi = t
+ }(),
  /**
   * leaflet-pegman
   *
@@ -929,7 +1025,7 @@
      _isTouching: !1,
      _isFading: !1,
      addHooks: function() {
-      this._handleTouch = L.bind(this._handleTouch, this), this._setGestureHandlingOptions(), this._disableInteractions(), this._map._container.addEventListener("touchstart", this._handleTouch), this._map._container.addEventListener("touchmove", this._handleTouch), this._map._container.addEventListener("touchend", this._handleTouch), this._map._container.addEventListener("touchcancel", this._handleTouch), this._map._container.addEventListener("click", this._handleTouch), L.DomEvent.on(this._map._container, "mousewheel", this._handleScroll, this), L.DomEvent.on(this._map, "mouseover", this._handleMouseOver, this), L.DomEvent.on(this._map, "mouseout", this._handleMouseOut, this), L.DomEvent.on(this._map, "movestart", this._handleDragging, this), L.DomEvent.on(this._map, "move", this._handleDragging, this), L.DomEvent.on(this._map, "moveend", this._handleDragging, this)
+      this._handleTouch = L.bind(this._handleTouch, this), this._setGestureHandlingOptions(), this._disableInteractions(), this._map._container.addEventListener("touchstart", this._handleTouch), this._map._container.addEventListener("touchmove", this._handleTouch), this._map._container.addEventListener("touchend", this._handleTouch), this._map._container.addEventListener("touchcancel", this._handleTouch), this._map._container.addEventListener("click", this._handleTouch), L.DomEvent.on(this._map._container, "mousewheel", this._handleScroll, this), L.DomEvent.on(this._map, "mouseover", this._handleMouseOver, this), L.DomEvent.on(this._map, "mouseout", this._handleMouseOut, this), L.DomEvent.on(this._map, "movestart", this._handleDragging, this), L.DomEvent.on(this._map, "move", this._handleDragging, this), L.DomEvent.on(this._map, "moveend", this._handleDragging, this), L.DomEvent.off(this._map, "enterFullscreen", this._onEnterFullscreen, this), L.DomEvent.off(this._map, "exitFullscreen", this._onExitFullscreen, this), L.DomEvent.on(this._map, "enterFullscreen", this._onEnterFullscreen, this), L.DomEvent.on(this._map, "exitFullscreen", this._onExitFullscreen, this), L.DomUtil.addClass(this._map._container, "leaflet-gesture-handling")
      },
      removeHooks: function() {
       this._enableInteractions(), this._map._container.removeEventListener("touchstart", this._handleTouch), this._map._container.removeEventListener("touchmove", this._handleTouch), this._map._container.removeEventListener("touchend", this._handleTouch), this._map._container.removeEventListener("touchcancel", this._handleTouch), this._map._container.removeEventListener("click", this._handleTouch), L.DomEvent.off(this._map._container, "mousewheel", this._handleScroll, this), L.DomEvent.off(this._map, "mouseover", this._handleMouseOver, this), L.DomEvent.off(this._map, "mouseout", this._handleMouseOut, this), L.DomEvent.off(this._map, "movestart", this._handleDragging, this), L.DomEvent.off(this._map, "move", this._handleDragging, this), L.DomEvent.off(this._map, "moveend", this._handleDragging, this), L.DomUtil.removeClass(this._map._container, "leaflet-gesture-handling")
@@ -980,7 +1076,7 @@
       return !1
      },
      _handleTouch: function(t) {
-      this._hasClass(t.target, ["leaflet-interactive", "leaflet-popup-content", "leaflet-popup-content-wrapper", "leaflet-popup-close-button", "leaflet-control-zoom-in", "leaflet-control-zoom-out"]) ? L.DomUtil.hasClass(t.target, "leaflet-interactive") && "touchmove" === t.type && 1 === t.touches.length ? this._enableTouchWarning() : this._disableTouchWarning() : "touchmove" !== t.type && "touchstart" !== t.type ? this._disableTouchWarning() : 1 === t.touches.length ? this._enableTouchWarning() : this._disableTouchWarning()
+      this._hasClass(t.target, ["leaflet-control-minimap", "leaflet-interactive", "leaflet-popup-content", "leaflet-popup-content-wrapper", "leaflet-popup-close-button", "leaflet-control-zoom-in", "leaflet-control-zoom-out"]) ? L.DomUtil.hasClass(t.target, "leaflet-interactive") && "touchmove" === t.type && 1 === t.touches.length ? this._enableTouchWarning() : this._disableTouchWarning() : "touchmove" !== t.type && "touchstart" !== t.type ? this._disableTouchWarning() : 1 === t.touches.length ? this._enableTouchWarning() : this._disableTouchWarning()
      },
      _enableTouchWarning: function() {
       this._enableWarning("touch"), this._disableInteractions()
@@ -1006,6 +1102,12 @@
      },
      _handleMouseOut: function(t) {
       i || this._disableInteractions()
+     },
+     _onExitFullscreen: function() {
+      this._map.options.gestureHandling && this._map.gestureHandling.enable()
+     },
+     _onEnterFullscreen: function() {
+      this._map.options.gestureHandling && this._map.gestureHandling.disable()
      }
     });
    L.Map.mergeOptions({
@@ -1049,8 +1151,10 @@
    }
   }),
   function(t, e) {
-   "function" == typeof define && define.amd ? define(["leaflet"], t) : "object" == typeof exports && (module.exports = t(require("leaflet")))
-     }((function(t) {
+   "function" == typeof define && define.amd ? define(["leaflet"], t) : "object" == typeof exports && (module.exports = t(require("leaflet"))), void 0 !== e && e.L && (e.L.Control.MiniMap = t(L), e.L.control.minimap = function(t, i) {
+    return new e.L.Control.MiniMap(t, i)
+   })
+  }((function(t) {
    var e = t.Control.extend({
     includes: t.Evented ? t.Evented.prototype : t.Mixin.Events,
     options: {
@@ -1078,14 +1182,17 @@
       opacity: 0,
       fillOpacity: 0
      },
-
+     strings: {
+      hideText: "Hide MiniMap",
+      showText: "Show MiniMap"
+     },
      mapOptions: {}
     },
     initialize: function(e, i) {
      t.Util.setOptions(this, i), this.options.aimingRectOptions.clickable = !1, this.options.shadowRectOptions.clickable = !1, this._layer = e
     },
     onAdd: function(e) {
-     this._mainMap = e, this._container = t.DomUtil.create("div"), this._container.style.width = this.options.width + "px", this._container.style.height = this.options.height + "px", t.DomEvent.disableClickPropagation(this._container), t.DomEvent.on(this._container, "mousewheel", t.DomEvent.stopPropagation);
+     this._mainMap = e, this._container = t.DomUtil.create("div", "leaflet-control-minimap"), this._container.style.width = this.options.width + "px", this._container.style.height = this.options.height + "px", t.DomEvent.disableClickPropagation(this._container), t.DomEvent.on(this._container, "mousewheel", t.DomEvent.stopPropagation);
      var i = {
       attributionControl: !1,
       dragging: !this.options.centerFixed,
@@ -1098,19 +1205,23 @@
       boxZoom: !this._isZoomLevelFixed(),
       crs: e.options.crs
      };
-     return i = t.Util.extend(this.options.mapOptions, i), this._mainMapMoving = !1, this._userToggledDisplay = !1, this._minimized = !1, this.options.toggleDisplay && this._addToggleButton()
-    
+     return i = t.Util.extend(this.options.mapOptions, i), this._miniMap = new t.Map(this._container, i), this._miniMap.addLayer(this._layer), this._mainMapMoving = !1, this._miniMapMoving = !1, this._userToggledDisplay = !1, this._minimized = !1, this.options.toggleDisplay && this._addToggleButton(), this._miniMap.whenReady(t.Util.bind((function() {
+      this._aimingRect = t.rectangle(this._mainMap.getBounds(), this.options.aimingRectOptions).addTo(this._miniMap), this._shadowRect = t.rectangle(this._mainMap.getBounds(), this.options.shadowRectOptions).addTo(this._miniMap), this._mainMap.on("moveend", this._onMainMapMoved, this), this._mainMap.on("move", this._onMainMapMoving, this), this._miniMap.on("movestart", this._onMiniMapMoveStarted, this), this._miniMap.on("move", this._onMiniMapMoving, this), this._miniMap.on("moveend", this._onMiniMapMoved, this)
+     }), this)), this._container
+    },
     addTo: function(e) {
      t.Control.prototype.addTo.call(this, e);
      var i = this.options.centerFixed || this._mainMap.getCenter();
-     return this._setDisplay(this.options.minimized), this
+     return this._miniMap.setView(i, this._decideZoom(!0)), this._setDisplay(this.options.minimized), this
     },
     onRemove: function(t) {
-     this._mainMap.off("moveend", this._onMainMapMoved, this), this._mainMap.off("move", this._onMainMapMoving, this)
+     this._mainMap.off("moveend", this._onMainMapMoved, this), this._mainMap.off("move", this._onMainMapMoving, this), this._miniMap.off("moveend", this._onMiniMapMoved, this), this._miniMap.removeLayer(this._layer)
     },
-   
+    changeLayer: function(t) {
+     this._miniMap.removeLayer(this._layer), this._layer = t, this._miniMap.addLayer(this._layer)
+    },
     _addToggleButton: function() {
-     this._toggleDisplayButton = this.options.toggleDisplay ? this._createButton("", this._toggleButtonInitialTitleText(),this._container, this._toggleDisplayButtonClicked, this) : void 0, this._toggleDisplayButton.style.width = this.options.collapsedWidth + "px", this._toggleDisplayButton.style.height = this.options.collapsedHeight + "px"
+     this._toggleDisplayButton = this.options.toggleDisplay ? this._createButton("", this._toggleButtonInitialTitleText(), "leaflet-control-minimap-toggle-display leaflet-control-minimap-toggle-display-" + this.options.position, this._container, this._toggleDisplayButtonClicked, this) : void 0, this._toggleDisplayButton.style.width = this.options.collapsedWidth + "px", this._toggleDisplayButton.style.height = this.options.collapsedHeight + "px"
     },
     _toggleButtonInitialTitleText: function() {
      return this.options.minimized ? this.options.strings.showText : this.options.strings.hideText
@@ -1133,16 +1244,53 @@
     _restore: function() {
      this.options.toggleDisplay ? (this._container.style.width = this.options.width + "px", this._container.style.height = this.options.height + "px", this._toggleDisplayButton.className = this._toggleDisplayButton.className.replace("minimized-" + this.options.position, ""), this._toggleDisplayButton.title = this.options.strings.hideText) : this._container.style.display = "block", this._minimized = !1, this._onToggle()
     },
-
-
-
+    _onMainMapMoved: function(t) {
+     if (this._miniMapMoving) this._miniMapMoving = !1;
+     else {
+      var e = this.options.centerFixed || this._mainMap.getCenter();
+      this._mainMapMoving = !0, this._miniMap.setView(e, this._decideZoom(!0)), this._setDisplay(this._decideMinimized())
+     }
+     this._aimingRect.setBounds(this._mainMap.getBounds())
+    },
+    _onMainMapMoving: function(t) {
+     this._aimingRect.setBounds(this._mainMap.getBounds())
+    },
+    _onMiniMapMoveStarted: function(t) {
+     if (!this.options.centerFixed) {
+      var e = this._aimingRect.getBounds(),
+       i = this._miniMap.latLngToContainerPoint(e.getSouthWest()),
+       o = this._miniMap.latLngToContainerPoint(e.getNorthEast());
+      this._lastAimingRectPosition = {
+       sw: i,
+       ne: o
+      }
+     }
+    },
+    _onMiniMapMoving: function(e) {
+     this.options.centerFixed || !this._mainMapMoving && this._lastAimingRectPosition && (this._shadowRect.setBounds(new t.LatLngBounds(this._miniMap.containerPointToLatLng(this._lastAimingRectPosition.sw), this._miniMap.containerPointToLatLng(this._lastAimingRectPosition.ne))), this._shadowRect.setStyle({
+      opacity: 1,
+      fillOpacity: .3
+     }))
+    },
+    _onMiniMapMoved: function(t) {
+     this._mainMapMoving ? this._mainMapMoving = !1 : (this._miniMapMoving = !0, this._mainMap.setView(this._miniMap.getCenter(), this._decideZoom(!1)), this._shadowRect.setStyle({
+      opacity: 0,
+      fillOpacity: 0
+     }))
+    },
     _isZoomLevelFixed: function() {
      var t = this.options.zoomLevelFixed;
      return this._isDefined(t) && this._isInteger(t)
     },
-   
+    _decideZoom: function(t) {
+     if (this._isZoomLevelFixed()) return t ? this.options.zoomLevelFixed : this._mainMap.getZoom();
+     if (t) return this._mainMap.getZoom() + this.options.zoomLevelOffset;
+     var e, i = this._miniMap.getZoom() - this._mainMap.getZoom(),
+      o = this._miniMap.getZoom() - this.options.zoomLevelOffset;
+     return i > this.options.zoomLevelOffset && this._mainMap.getZoom() < this._miniMap.getMinZoom() - this.options.zoomLevelOffset ? this._miniMap.getZoom() > this._lastMiniMapZoom ? (e = this._mainMap.getZoom() + 1, this._miniMap.setZoom(this._miniMap.getZoom() - 1)) : e = this._mainMap.getZoom() : e = o, this._lastMiniMapZoom = this._miniMap.getZoom(), e
+    },
     _decideMinimized: function() {
-     return this._userToggledDisplay ? this._minimized : this.options.autoToggleDisplay
+     return this._userToggledDisplay ? this._minimized : this.options.autoToggleDisplay ? !!this._mainMap.getBounds().contains(this._miniMap.getBounds()) : this._minimized
     },
     _isInteger: function(t) {
      return "number" == typeof t
@@ -1163,7 +1311,11 @@
      this.fire(this._minimized ? "minimize" : "restore", e), this.fire("toggle", e)
     }
    });
-    e
+   return t.Map.mergeOptions({
+    miniMapControl: !1
+   }), t.Map.addInitHook((function() {
+    this.options.miniMapControl && (this.miniMapControl = (new e).addTo(this))
+   })), e
   }), window),
   function() {
    var t = window.console || {
@@ -2512,12 +2664,28 @@
    locateControl: {
     position: "bottomright"
    },
-
+   fullscreenControl: {
+    position: "topright",
+    title: "Enter Fullscreen",
+    titleCancel: "Exit Fullscreen",
+    forceSeparateButton: !0
+   },
    layersControl: {
     inline: !0,
     position: "topleft"
    },
-
+   minimapControl: {
+    position: "bottomleft",
+    toggleDisplay: !1,
+    toggleMapTypes: !0,
+    width: 75,
+    height: 75,
+    aimingRectOptions: {
+     color: "#000000",
+     weight: 1,
+     opacity: 0,
+     fillOpacity: 0
+    },
     shadowRectOptions: {
      color: "#000000",
      weight: 1,
@@ -2529,7 +2697,7 @@
      gestureHandling: !1,
      searchControl: !1,
      loadingControl: !1,
-    
+     _isMiniMap: !0
     }
    },
    editInOSMControl: {
@@ -2565,18 +2733,18 @@
    },
    disableDefaultUI: !1,
    plugins: [],
-   
+   _isMiniMap: !1
   };
 
   function e() {
-   this.zoomControl && this.zoomControl.remove(), this.searchControl && this.options.searchControl && this.searchControl.remove(), this.attributionControl && this.attributionControl.remove()
+   this.zoomControl && this.zoomControl.remove(), this.fullscreenControl && this.options.fullscreenControl && !this.options.zoomControl && this.fullscreenControl.remove(), this.searchControl && this.options.searchControl && this.searchControl.remove(), this.attributionControl && this.attributionControl.remove()
   }
 
   function i() {
    for (let e in t) !0 === this.options[e] || void 0 === this.options[e] ? this.options[e] = t[e] : "object" == typeof this.options[e] && this.options[e] instanceof Array == !1 && (this.options[e] = p(t[e], this.options[e]));
    if (this.options.apiKeys && (this.options.apiKeys.thunderforest && (this.options.mapTypes.terrain.options.apikey = this.options.apiKeys.thunderforest), this.options.apiKeys.google && (this.options.pegmanControl.apiKey = this.options.apiKeys.google)), this.options.mapTypes.terrain.options.apikey) {
     var e = this.options.mapTypes.terrain.url; - 1 === e.indexOf("apikey=") && (this.options.mapTypes.terrain.url += (-1 === e.indexOf("?") ? "?" : "&") + "apikey={apikey}")
-   }!1 === this.options.mapTypeIds.includes(this.options.mapTypeId) && this.options.mapTypeIds.length > 0 && (this.options.mapTypeId = this.options.mapTypeIds[0]), this.options.searchControl && this.options.searchControl.detectUserLang && (this.options.searchControl.querylang = window.navigator.languages ? window.navigator.languages[0] : window.navigator.userLanguage || window.navigator.language), this.options.searchControl && this.options.searchControl.querylang && (this.options.searchControl.url = this.options.searchControl.url.replace("{querylang}", this.options.searchControl.querylang))
+   }!1 === this.options.mapTypeIds.includes(this.options.mapTypeId) && this.options.mapTypeIds.length > 0 && (this.options.mapTypeId = this.options.mapTypeIds[0]), this.options.searchControl && this.options.searchControl.detectUserLang && (this.options.searchControl.querylang = window.navigator.languages ? window.navigator.languages[0] : window.navigator.userLanguage || window.navigator.language), this.options.searchControl && this.options.searchControl.querylang && (this.options.searchControl.url = this.options.searchControl.url.replace("{querylang}", this.options.searchControl.querylang)), !this.options.minimapControl || this.options.center || this.options.zoom || this.setView([0, 0], 0)
   }
 
   function o() {
@@ -2592,10 +2760,10 @@
      t && t.layer && t.layer.mapTypeId && (this._prevMapTypeId = this._lastMapTypeId, this._lastMapTypeId = t.layer.mapTypeId)
     })), this.on("baselayerchange", (function(t) {
      t && t.layer && t.layer.mapTypeId && t.layer.bringToBack && t.layer.bringToBack()
-    })), this.options.layersControl && (t.layers = new L.Control.Layers(i, null, this.options.layersControl), this.on("zoomend", r, this)), this.options.attributionControl && this.attributionControl && (this.attributionControl.addTo(this), t.attribution = this.attributionControl, this.on("baselayerchange", L.bind(n, this, this.attributionControl.options.prefix))), this.options.editInOSMControl && (t.editInOSM = new L.Control.EditInOSM(this.options.editInOSMControl)), this.options.scaleControl && (t.scale = new L.Control.Scale(this.options.scaleControl)), this.options.zoomControl && this.zoomControl && (this.zoomControl.setPosition(this.options.zoomControl.position), this.zoomControl.addTo(this), t.zoom = this.zoomControl), this.options.pegmanControl && (t.pegman = new L.Control.Pegman(this.options.pegmanControl)), this.options.locateControl && (t.locate = new L.Control.Locate(this.options.locateControl)), this.options.searchControl && (t.search = this.searchControl = new L.Control.Search(this.options.searchControl)), this.options.printControl && (t.print = new L.Control.EasyPrint(this.options.printControl)), this.options.loadingControl && (t.loading = new L.Control.Loading(this.options.loadingControl))) {
-    
+    })), this.options.layersControl && (t.layers = new L.Control.Layers(i, null, this.options.layersControl), this.on("zoomend", r, this)), this.options.attributionControl && this.attributionControl && (this.attributionControl.addTo(this), t.attribution = this.attributionControl, this.on("baselayerchange", L.bind(n, this, this.attributionControl.options.prefix))), this.options.editInOSMControl && (t.editInOSM = new L.Control.EditInOSM(this.options.editInOSMControl)), this.options.scaleControl && (t.scale = new L.Control.Scale(this.options.scaleControl)), this.options.zoomControl && this.zoomControl && (this.zoomControl.setPosition(this.options.zoomControl.position), this.zoomControl.addTo(this), t.zoom = this.zoomControl), this.options.pegmanControl && (t.pegman = new L.Control.Pegman(this.options.pegmanControl)), this.options.locateControl && (t.locate = new L.Control.Locate(this.options.locateControl)), this.options.searchControl && (t.search = this.searchControl = new L.Control.Search(this.options.searchControl)), this.options.printControl && (t.print = new L.Control.EasyPrint(this.options.printControl)), this.options.loadingControl && (t.loading = new L.Control.Loading(this.options.loadingControl)), this.options.fullscreenControl && (t.fullscreen = this.fullscreenControl = new L.Control.FullScreen(this.options.fullscreenControl)), this.options.minimapControl) {
+    var l = this.options.minimapControl.mapOptions.mapTypeId,
      h = this.options.mapTypes[l];
-    
+    h && ((h = new L.TileLayer(h.url, h.options)).mapTypeId = l, t.minimap = new L.Control.MiniMap(h, this.options.minimapControl), t.minimap._mainMapBaseLayers = i)
    }
    this.options.resizerControl && (t.resizer = new L.Control.Resizer(this.options.resizerControl));
    for (let e in t) t[e].addTo && t[e].addTo(this);
@@ -2685,7 +2853,9 @@
    scaleControl: !0,
    pegmanControl: !0,
    locateControl: !0,
+   fullscreenControl: !0,
    layersControl: !0,
+   minimapControl: !0,
    editInOSMControl: !0,
    loadingControl: !0,
    searchControl: !0,
@@ -2694,9 +2864,11 @@
    disableDefaultUI: !1,
    includeLeafletCSS: !0,
    apiKeys: void 0,
-    }), L.Map.addInitHook((function() {
-   e.call(this),this.options.disableDefaultUI || (i.call(this), o.call(this))
+   _isMiniMap: !1
+  }), L.Map.addInitHook((function() {
+   e.call(this), this.options._isMiniMap || this.options.disableDefaultUI || (i.call(this), o.call(this))
   }));
+  var l = L.Control.MiniMap.prototype.onAdd;
 
   function h(t, e) {
    return t.some(t => e.includes(t))
@@ -2717,7 +2889,35 @@
     });
    return p(t, ...e)
   }
-
+  L.Control.MiniMap.include({
+   onAdd: function(t) {
+    var e = l.call(this, t);
+    return this._miniMap && (this._miniMap.doubleClickZoom.disable(), this._miniMap.touchZoom.disable(), this._miniMap.scrollWheelZoom.disable()), this.options.toggleMapTypes && (L.DomEvent.on(t, "baselayerchange", this._handleMainMapTypeChange, this), L.DomEvent.on(this._container, "click", this._handleMiniMapTypeToggle, this)), e
+   },
+   _handleMainMapTypeChange: function(t) {
+    if (!this._handligMiniMapTypeToggle && t && t.layer) {
+     var e, i, o = this._mainMap,
+      n = this._layer.mapTypeId,
+      s = t.layer.mapTypeId;
+     if (o.options.mapTypeIds.length > 0 && h(o.options.mapTypeIds, s)) s != n && (this._lastMapTypeId = s), "satellite" == s && "satellite" == n ? e = this._lastMapTypeId : "satellite" != s && "satellite" != n && (e = "satellite"), (i = o.options.mapTypes[e]) && ((i = new L.TileLayer(i.url, i.options)).mapTypeId = e, this._lastMapTypeId = n, this.changeLayer(i))
+    }
+   },
+   _handleMiniMapTypeToggle: function() {
+    if (this._handligMiniMapTypeToggle = !0, this._layer && this._mainMapBaseLayers) {
+     var t, e, i = this._mainMap,
+      o = this._layer.mapTypeId;
+     for (let t in this._mainMapBaseLayers)
+      if (i.hasLayer(this._mainMapBaseLayers[t]) && o != this._mainMapBaseLayers[t].mapTypeId) {
+       this._mainMapBaseLayers[t].mapTypeId;
+       break
+      } if (i.options.mapTypeIds.length > 0 && h(i.options.mapTypeIds, o))
+      if (t = this._lastMapTypeId || i.options.mapTypeId, "satellite" != this._lastMapTypeId && "satellite" != o && (t = "satellite"), e = i.options.mapTypes[t]) {
+       (e = new L.TileLayer(e.url, e.options)).mapTypeId = t, this._lastMapTypeId = o, this.changeLayer(e);
+       for (let t in this._mainMapBaseLayers) this._mainMapBaseLayers[t].remove(), this._lastMapTypeId == this._mainMapBaseLayers[t].mapTypeId && this._mainMapBaseLayers[t].addTo(i)
+      } this._handligMiniMapTypeToggle = !1
+    }
+   }
+  })
  }()
 }));
 //# sourceMappingURL=leaflet-ui.js.map
