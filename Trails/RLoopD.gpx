@@ -4,7 +4,7 @@
 		<time>2020-06-03T10:39:57-04:00</time>
 		<bounds minlat="46.087937827704252" minlon="-77.473754155841803" maxlat="46.094915242642408" maxlon="-77.464186597683863"/>
 	</metadata>
-	<rte><name>R LoopD</name><number>13</number>
+	<rte><name>R LoopD</name><number>22</number>
 		<rtept lat="46.094907860354922" lon="-77.466232541334421">
 			<ele>122.04210000000603</ele>
 		</rtept>
