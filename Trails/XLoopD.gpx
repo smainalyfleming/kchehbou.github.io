@@ -5,6 +5,14 @@
 		<bounds minlat="46.086448018749699" minlon="-77.46529085369464" maxlat="46.09140054847817" maxlon="-77.456250126896123"/>
 	</metadata>
 	<rte><name>X LoopD</name><number>24</number>
+		  <extensions>
+    <line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+      <color>0000FF</color>
+      <opacity>0.5</opacity>
+      <weight>4</weight>
+      <linecap>square</linecap>
+    </line>
+  </extensions>
 		<rtept lat="46.089026583637846" lon="-77.456250126896123">
 			<ele>131.34420000000682</ele>
 		</rtept>
