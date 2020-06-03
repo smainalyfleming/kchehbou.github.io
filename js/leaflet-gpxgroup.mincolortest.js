@@ -126,6 +126,7 @@ L.GpxGrroup = L.Class.extend({
   this._get(track, this._loadRoute.bind(this))
  },
  /*Displaying default color for all trails*/
+ color='grey';
  /*_loadRoute: function(data) {
   var colors = this._uniqueColors(this._tracks.length);
   var color = colors[this._count++];
@@ -134,7 +135,7 @@ L.GpxGrroup = L.Class.extend({
    opacity: .75,
    weight: 3,
    distanceMarkers: this.options.distanceMarkers_options
-  };
+  };*/
   var marker_style = {
    startIconUrl: null,
    endIconUrl: null
@@ -259,6 +260,7 @@ L.GpxGrroup = L.Class.extend({
   };
   xhr.send()
  },
+  /*
  _uniqueColors: function(count) {
   if (count === 0) return [];
   if (count === 1) return ["#0000ff"];
