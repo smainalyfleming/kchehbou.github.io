@@ -126,7 +126,6 @@ L.GpxGrroup = L.Class.extend({
   this._get(track, this._loadRoute.bind(this))
  },
  /*Displaying default color for all trails*/
- color='grey';
  /*_loadRoute: function(data) {
   var colors = this._uniqueColors(this._tracks.length);
   var color = colors[this._count++];
