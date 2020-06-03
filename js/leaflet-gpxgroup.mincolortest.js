@@ -125,7 +125,8 @@ L.GpxGrroup = L.Class.extend({
  addTrack: function(track) {
   this._get(track, this._loadRoute.bind(this))
  },
- _loadRoute: function(data) {
+ /*Displaying default color for all trails*/
+ /*_loadRoute: function(data) {
   var colors = this._uniqueColors(this._tracks.length);
   var color = colors[this._count++];
   var line_style = {
@@ -318,6 +319,7 @@ L.GpxGrroup = L.Class.extend({
  _byteToHex: function(n) {
   return (n >> 4 & 15).toString(16) + (n & 15).toString(16)
  },
+ */
  removeFrom: function(map) {
   this._layers.removeFrom(map)
  }
