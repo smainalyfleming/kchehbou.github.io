@@ -4,7 +4,7 @@
 		<time>2020-05-31T11:56:52-04:00</time>
 		<bounds minlat="46.015413601391685" minlon="-77.522270871959918" maxlat="46.090607394192261" maxlon="-77.435907001204839"/>
 	</metadata>
-	<rte><name>Chalk River</name><number>8</number>
+	<rte><name>Chalk River to Deep River</name><number>8</number>
 		<rtept lat="46.018504033854256" lon="-77.449130569543996">
 			<ele>159.63880000000063</ele>
 		</rtept>
