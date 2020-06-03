@@ -250,7 +250,7 @@ _loadRoute: function(data) {
    var selected =
     layers[j].isSelected();
    var legend = L.DomUtil.get("legend_" + layers[j]._leaflet_id);
-   legend.querySelector("line").style.stroke = selected ? this.options.highlight.color : "";
+ /*  legend.querySelector("line").style.stroke = selected ? this.options.highlight.color : "";*/
    legend.parentNode.style.fontWeight = selected ? "700" : ""
   }
  },
