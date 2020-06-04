@@ -9,7 +9,7 @@
     <line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
       <color>FFFF00</color>
       <opacity>0.5</opacity>
-      <weight>7</weight>
+      <weight>3</weight>
       <linecap>square</linecap>
     </line>
   </extensions>
