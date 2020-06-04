@@ -56,7 +56,7 @@ L.GPX.include(L.Mixin.Selectable);
 L.GpxGrroup = L.Class.extend({
  options: {
   highlight: {
-   color: "#ff0",
+   color: "#FFFF00",
    opacity: 1
   },
   points: [],
