@@ -7,7 +7,7 @@
 	<rte><name>S LoopD</name><number>23</number>
 		  <extensions>
     <line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
-      <color>0000FF</color>
+      <color>green</color>
       <opacity>0.5</opacity>
       <weight>1</weight>
       <linecap>square</linecap>
