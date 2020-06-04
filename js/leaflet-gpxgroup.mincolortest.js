@@ -130,14 +130,14 @@ _loadRoute: function(data) {
 
   /* var colors = this._uniqueColors(this._tracks.length);
   var color = colors[this._count++];
-  */
+ 
   var color = "grey";
   var line_style = {
    color: color,
    opacity: .75,
    weight: 3,
    distanceMarkers: this.options.distanceMarkers_options
-  };
+  }; */
   var marker_style = {
    startIconUrl: null,
    endIconUrl: null
