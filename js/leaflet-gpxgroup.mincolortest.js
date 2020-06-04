@@ -7,7 +7,7 @@ L.Mixin.Selectable = {
    this.fire("selected")
   }
  },
- isSelected: function() {g
+ isSelected: function() {
   return !!this._selected
  }
 };
@@ -56,7 +56,7 @@ L.GPX.include(L.Mixin.Selectable);
 L.GpxGrroup = L.Class.extend({
  options: {
   highlight: {
-   color: "#FFFF00",
+   color: "#ff0",
    opacity: 1
   },
   points: [],
@@ -125,19 +125,15 @@ L.GpxGrroup = L.Class.extend({
  addTrack: function(track) {
   this._get(track, this._loadRoute.bind(this))
  },
- /*Displaying default color for all trails*/
-_loadRoute: function(data) {
-
-  /* var colors = this._uniqueColors(this._tracks.length);
+ _loadRoute: function(data) {
+  var colors = this._uniqueColors(this._tracks.length);
   var color = colors[this._count++];
- 
-  var color = "grey";
   var line_style = {
    color: color,
    opacity: .75,
    weight: 3,
    distanceMarkers: this.options.distanceMarkers_options
-  }; */
+  };
   var marker_style = {
    startIconUrl: null,
    endIconUrl: null
@@ -250,7 +246,7 @@ _loadRoute: function(data) {
    var selected =
     layers[j].isSelected();
    var legend = L.DomUtil.get("legend_" + layers[j]._leaflet_id);
- legend.querySelector("line").style.stroke = selected ? this.options.highlight.color : "";
+   legend.querySelector("line").style.stroke = selected ? this.options.highlight.color : "";
    legend.parentNode.style.fontWeight = selected ? "700" : ""
   }
  },
@@ -262,7 +258,6 @@ _loadRoute: function(data) {
   };
   xhr.send()
  },
-  /*
  _uniqueColors: function(count) {
   if (count === 0) return [];
   if (count === 1) return ["#0000ff"];
@@ -323,7 +318,6 @@ _loadRoute: function(data) {
  _byteToHex: function(n) {
   return (n >> 4 & 15).toString(16) + (n & 15).toString(16)
  },
- */
  removeFrom: function(map) {
   this._layers.removeFrom(map)
  }
