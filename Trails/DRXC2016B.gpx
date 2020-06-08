@@ -1,13 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><gpx>
-  <metadata>
-    <link href="http://www.garmin.com">
-      <text>Garmin International</text>
-    </link>
-    <time>2020-01-07T03:12:20Z</time>
-    <bounds maxlat="46.096746968105435" maxlon="-77.450216682627797" minlat="46.072682943195105" minlon="-77.481169290840626" />
-  </metadata>
-  <trk><name>B Loop</name>
-    <trkseg>
+
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="46.086620610222980" minlon="-77.478083081613804" maxlat="46.089369244383363" maxlon="-77.472628599270692"/></metadata>                
+<trk><name>B Loop</name><number>3</number>
+  <trkseg>
       <trkpt lat="46.076575499027967" lon="-77.461653789505363">
         <ele>173.6552734375</ele>
       </trkpt>
