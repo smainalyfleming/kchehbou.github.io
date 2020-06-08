@@ -2653,7 +2653,7 @@
      t && t.layer && t.layer.mapTypeId && (this._prevMapTypeId = this._lastMapTypeId, this._lastMapTypeId = t.layer.mapTypeId)
     })), this.on("baselayerchange", (function(t) {
      t && t.layer && t.layer.mapTypeId && t.layer.bringToBack && t.layer.bringToBack()
-    })), this.options.layersControl && (t.layers = new L.Control.Layers(i, null, this.options.layersControl), this.on("zoomend", r, this)), this.options.attributionControl && this.attributionControl && (this.attributionControl.addTo(this), t.attribution = this.attributionControl, this.on("baselayerchange", L.bind(n, this, this.attributionControl.options.prefix))), this.options.editInOSMControl && (t.editInOSM = new L.Control.EditInOSM(this.options.editInOSMControl)), this.options.scaleControl && (t.scale = new L.Control.Scale(this.options.scaleControl)), this.options.zoomControl && this.zoomControl && (this.zoomControl.setPosition(this.options.zoomControl.position), this.zoomControl.addTo(this), t.zoom = this.zoomControl), this.options.pegmanControl && (t.pegman = new L.Control.Pegman(this.options.pegmanControl)), this.options.locateControl && (t.locate = new L.Control.Locate(this.options.locateControl)), this.options.searchControl && (t.search = this.searchControl = new L.Control.Search(this.options.searchControl)), this.options.printControl && (t.print = new L.Control.EasyPrint(this.options.printControl)), this.options.loadingControl && (t.loading = new L.Control.Loading(this.options.loadingControl)), this.options.minimapControl) {
+    })), this.options.layersControl && (t.layers = new L.Control.Layers(i, null, this.options.layersControl), this.on("zoomend", r, this)), this.options.attributionControl && this.attributionControl && (this.attributionControl.addTo(this), t.attribution = this.attributionControl, this.on("baselayerchange", L.bind(n, this, this.attributionControl.options.prefix))), this.options.editInOSMControl && (t.editInOSM = new L.Control.EditInOSM(this.options.editInOSMControl)), this.options.scaleControl && (t.scale = new L.Control.Scale(this.options.scaleControl)), this.options.zoomControl && this.zoomControl && (t.search = this.searchControl = new L.Control.Search(this.options.searchControl)), this.options.printControl && (t.print = new L.Control.EasyPrint(this.options.printControl)), this.options.loadingControl && (t.loading = new L.Control.Loading(this.options.loadingControl)), this.options.minimapControl) {
     var l = this.options.minimapControl.mapOptions.mapTypeId,
      h = this.options.mapTypes[l];
     h && ((h = new L.TileLayer(h.url, h.options)).mapTypeId = l, t.minimap = new L.Control.MiniMap(h, this.options.minimapControl), t.minimap._mainMapBaseLayers = i)
@@ -2741,19 +2741,6 @@
    mapTypeId: "streets",
    mapTypeIds: ["streets", "satellite", "topo"],
    mapTypes: void 0,
-   gestureHandling: !0,
-   zoomControl: !0,
-   scaleControl: !0,
-   pegmanControl: !0,
-   locateControl: !0,
-   layersControl: !0,
-   editInOSMControl: !0,
-   loadingControl: !0,
-   searchControl: !0,
-   printControl: !1,
-   resizerControl: !1,
-   disableDefaultUI: !1,
-   includeLeafletCSS: !0,
    apiKeys: void 0,
    _isMiniMap: !1
   }), L.Map.addInitHook((function() {
@@ -2779,7 +2766,8 @@
     });
    return p(t, ...e)
   }
-  
+
  }()
 }));
 //# sourceMappingURL=leaflet-ui.js.map
+    
