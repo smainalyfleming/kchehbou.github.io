@@ -73,6 +73,7 @@ L.GpxGrroup = L.Class.extend({
     iconUrl: "../images/elevation-poi.png",
     iconSize: [12, 12]
    }
+          },
   
           polygons: [],
           polygons_options: {
