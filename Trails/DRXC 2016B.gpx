@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?><gpx>
-
   <metadata>
     <link href="http://www.garmin.com">
       <text>Garmin International</text>
@@ -7,14 +6,7 @@
     <time>2020-01-07T03:12:20Z</time>
     <bounds maxlat="46.096746968105435" maxlon="-77.450216682627797" minlat="46.072682943195105" minlon="-77.481169290840626" />
   </metadata>
-
-  <trk>
-    <name>B Loop</name>
-    <extensions>
-      <gpxx:TrackExtension>
-        <gpxx:DisplayColor>Blue</gpxx:DisplayColor>
-      </gpxx:TrackExtension>
-    </extensions>
+  <trk><name>B Loop</name>
     <trkseg>
       <trkpt lat="46.076575499027967" lon="-77.461653789505363">
         <ele>173.6552734375</ele>
