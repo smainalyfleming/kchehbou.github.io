@@ -2246,7 +2246,7 @@
      sizeModes: ["Current"],
      filename: "map",
      exportOnly: !1,
-     hidden: !1,
+     hidden: !0,
      tileWait: 500,
      hideControlContainer: !0,
      hideClasses: [],
