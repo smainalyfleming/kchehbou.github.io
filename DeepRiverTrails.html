@@ -124,13 +124,6 @@
 					collapsed: true,
 				},
 			},
-			scaleControl: {
-				options: {
-					width: 200,
-					position: 'bottomleft',
-					imperial: false,
-				},
-			},
 			locateControl: {
 				options: {
 					position: "bottomright",
@@ -227,8 +220,7 @@
 		var baseLayers = {};
    
 		var controlZoom = new L.Control.Zoom(opts.zoomControl);
-		var controlScale = L.control.scale(opts.scaleControl.options);
-		var controlLocate = L.control.locate(opts.locateControl.options);
+		
 		var routes = L.gpxGrroup(trails, {
 			points: parkings,
 			points_options: opts.parkings.options,
