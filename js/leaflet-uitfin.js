@@ -2617,7 +2617,7 @@
    },
    printControl: {
     position: "bottomright",
-    hideControlContainer: !0,
+    hideControlContainer: !1,
     exportOnly: !0,
     sizeModes: ["A4Portrait", "A4Landscape"]
    },
